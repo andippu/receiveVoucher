@@ -40,7 +40,7 @@ public class DistBayarMaster {
     private Date mbdTgl;
 
     @Column(name="MBD_VALUE")
-    private BigInteger mbdValue;
+    private Long mbdValue;
 
     @Column(name="MBD_TYPE")
     private String mbdType;
@@ -52,7 +52,7 @@ public class DistBayarMaster {
     private Date mbdTglGiro;
 
     @Column(name="MBD_DEPOSIT")
-    private BigInteger mbdDeposit;
+    private Long mbdDeposit;
 
     @Column(name="MBD_CREATE_BY")
     private String mbdCreateBy;
