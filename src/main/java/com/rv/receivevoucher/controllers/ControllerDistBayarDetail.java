@@ -17,13 +17,13 @@ public class ControllerDistBayarDetail {
 	ServiceDistBayarDetail servDistByr;
 	
 	@GetMapping("/byrdistdetail/getbyrdistdtllist")
-	public List<DistBayarDetail> getByrDetail(String byrId){
-		return servDistByr.getByrDetail();
+	public List<DistBayarDetail> getByrDetail(String param){
+		return servDistByr.getByrDetail(param);
 	}
 
 	@GetMapping("/byrdistdetail/getbyrdistdtlid")
-	public Optional<DistBayarDetail> getDistByrSingle(Long id){
-		return servDistByr.getDistByrSingle(id);
+	public Optional<DistBayarDetail> getDistByrSingle(Long param){
+		return servDistByr.getDistByrSingle(param);
 	}
 
 	@PostMapping("/byrdistdetail/saveupdatedistbyrdtl")
@@ -33,13 +33,9 @@ public class ControllerDistBayarDetail {
 	}
 
 	@DeleteMapping("/byrdistdetail/deleteDistByrDtl")
-	public String delDistByrSingle(Long id){
-		servDistByr.delDistByrSingle(id);
+	public String delDistByrSingle(Long param){
+		servDistByr.delDistByrSingle(param);
 		return "Delete Successfully";
 	}
-
-
-
-
 
 }

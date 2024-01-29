@@ -38,10 +38,10 @@ public class DistBayarDetail {
     private String dydCusCode;
 
     @Column(name="DYD_FM_NO")
-    private String dydFmDate;
+    private String dydFmNo;
 
     @Column(name="DYD_FM_DATE")
-    private Date dydFmNo;
+    private Date dydFmDate;
 
     @Column(name="DYD_AMOUNT")
     private Long dydAmount;

@@ -14,8 +14,8 @@ public class ServiceDistBayarDetail {
 	@Autowired
 	IDistBayarDetail RepoByrDtl;
 	
-	public List<DistBayarDetail> getByrDetail(){
-		return RepoByrDtl.findAll();
+	public List<DistBayarDetail> getByrDetail(String param){
+		return RepoByrDtl.findByDydMbdUrut(param);
 	}
 
 	public Optional<DistBayarDetail> getDistByrSingle(Long param1){

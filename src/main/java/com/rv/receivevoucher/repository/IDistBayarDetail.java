@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface IDistBayarDetail extends JpaRepository <DistBayarDetail, Long> {
 
+    public List<DistBayarDetail> findByDydMbdUrut(String param);
 
 }
