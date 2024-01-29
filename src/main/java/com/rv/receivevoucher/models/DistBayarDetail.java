@@ -1,9 +1,6 @@
 package com.rv.receivevoucher.models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,11 +16,14 @@ import java.util.Date;
 public class DistBayarDetail {
 
     @Id
-    @Column(name="DYD_NO", nullable = false)
+    @Column(name="DYD_NO")
     private Long dydNo;
 
     @Column(name="DYD_MBD_NO",length=5)
     private String dydMbdNo;
+
+    @Column(name="MBD_DYD_URUT",length=50)
+    private String dydMbdUrut;
 
     @Column(name="DYD_MBD_TAHUN",length=4)
     private String dydMbdTahun;
@@ -31,23 +31,20 @@ public class DistBayarDetail {
     @Column(name="DYD_MBD_BULAN",length=2)
     private String DydMbdBulan;
 
-    @Column(name="MBD_DYD_URUT",length=50,  nullable = false)
-    private String mbdDydUrut;
-
     @Column(name="DYD_DATE")
     private Date dydDate;
 
     @Column(name="DYD_CUS_CODE",length=6,  nullable = false)
     private String dydCusCode;
 
-    @Column(name="DYD_FM_NO",length=50,  nullable = false)
-    private String dydFmNo;
+    @Column(name="DYD_FM_NO")
+    private String dydFmDate;
 
     @Column(name="DYD_FM_DATE")
-    private Date dydFmDate;
+    private Date dydFmNo;
 
     @Column(name="DYD_AMOUNT")
-    private BigInteger dydAmount;
+    private Long dydAmount;
 
     @Column(name="DYD_ADMIN")
     private Integer dydAdmin;
@@ -86,7 +83,7 @@ public class DistBayarDetail {
     private Integer dydPph22;
 
     @Column(name="DYD_TOTAL")
-    private BigInteger dydTotal;
+    private Long dydTotal;
 
     @Column(name="DYD_DEPOSIT")
     private Integer dydDeposit;
