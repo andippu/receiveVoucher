@@ -32,4 +32,8 @@ public class ServiceDistBayarDetail {
 		return "Submit Successfully";
 	}
 
+	public DistBayarDetail getDistByrById (String noUrut, String fmNo){
+		return RepoByrDtl.findByDydMbdUrutAndDydFmNo(noUrut, fmNo);
+	}
+
 }

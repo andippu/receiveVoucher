@@ -25,6 +25,10 @@ public class ControllerDistBayarDetail {
 	public Optional<DistBayarDetail> getDistByrSingle(Long param){
 		return servDistByr.getDistByrSingle(param);
 	}
+	@GetMapping("/byrdistdetail/getdistbyrbyid")
+	public DistBayarDetail getDistByrById (String noUrut, String fmNo){
+		return servDistByr.getDistByrById(noUrut, fmNo);
+	}
 
 	@PostMapping("/byrdistdetail/saveupdatedistbyrdtl")
 	public String updateSaveEntity(@RequestBody DistBayarDetail updatedEntity) {

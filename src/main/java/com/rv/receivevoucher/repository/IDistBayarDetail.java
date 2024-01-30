@@ -11,4 +11,6 @@ public interface IDistBayarDetail extends JpaRepository <DistBayarDetail, Long> 
 
     public List<DistBayarDetail> findByDydMbdUrut(String param);
 
+    public DistBayarDetail findByDydMbdUrutAndDydFmNo(String noUrut, String fmNo);
+
 }
