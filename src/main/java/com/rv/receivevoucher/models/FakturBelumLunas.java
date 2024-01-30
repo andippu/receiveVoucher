@@ -15,8 +15,8 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "V_FAKTUR_BELUM_LUNAS")
-public class VFakturBelumLunas {
+@Table(name = "FAKTUR_BELUM_LUNAS")
+public class FakturBelumLunas {
 
     @Id
     @Column(name="FBL_FM_NO", nullable = false)

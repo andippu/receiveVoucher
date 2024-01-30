@@ -2,6 +2,7 @@ package com.rv.receivevoucher.controllers;
 
 
 
+import com.rv.receivevoucher.models.FakturBelumLunas;
 import com.rv.receivevoucher.models.VFakturBelumLunas;
 import com.rv.receivevoucher.services.ServiceFakturBelumLunas;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,8 +16,9 @@ import java.util.List;
 public class ControllerFakturBelumLunas {
     @Autowired
     ServiceFakturBelumLunas servFtBlLs;
-
+    @GetMapping("/fakbl/getfakbllns")
     public List<VFakturBelumLunas> getFakBlmLunas(){
+        System.out.println("control");
         return servFtBlLs.getFakBlmLunas();
     }
 }
