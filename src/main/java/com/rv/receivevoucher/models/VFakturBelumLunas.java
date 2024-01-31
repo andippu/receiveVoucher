@@ -34,6 +34,9 @@ public class VFakturBelumLunas {
     @Column(name="FBL_FM_TOTAL")
     private Long fblFmTotal;
 
+    @Column(name="FBL_SELECTED")
+    private Boolean fblSelected;
+
 
 
 }

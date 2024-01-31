@@ -13,5 +13,5 @@ import java.util.List;
 @Repository
 @CrossOrigin("http://localhost:4200")
 public interface IVFakturBelumLunas extends JpaRepository<VFakturBelumLunas,String> {
-
+      List<VFakturBelumLunas> findByFblCustCode(String custCode);
 }

@@ -16,7 +16,7 @@ public class ServiceFakturBelumLunas {
     @Autowired
     IVFakturBelumLunas repoFakBlLs;
 
-    public List<VFakturBelumLunas> getFakBlmLunas(){
-        return repoFakBlLs.findAll();
+    public List<VFakturBelumLunas> getFakBlmLunas(String custCode){
+        return repoFakBlLs.findByFblCustCode(custCode);
     }
 }

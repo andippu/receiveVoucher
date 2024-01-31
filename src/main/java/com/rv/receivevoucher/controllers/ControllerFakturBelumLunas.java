@@ -17,8 +17,8 @@ public class ControllerFakturBelumLunas {
     @Autowired
     ServiceFakturBelumLunas servFtBlLs;
     @GetMapping("/fakbl/getfakbllns")
-    public List<VFakturBelumLunas> getFakBlmLunas(){
+    public List<VFakturBelumLunas> getFakBlmLunas(String custCd){
         System.out.println("control");
-        return servFtBlLs.getFakBlmLunas();
+        return servFtBlLs.getFakBlmLunas(custCd);
     }
 }

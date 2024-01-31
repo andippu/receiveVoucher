@@ -21,7 +21,7 @@ public class ControllerVFakturMaster {
         return ServFM.getFakturByMst(dt);
     }
 
-    @GetMapping("/fakmas/getall")
+    @GetMapping("/fakmas/getfakbllnsbycust")
     public List<VFakturMaster> getAllFaktur(){
         return ServFM.getAllFaktur();
     }
