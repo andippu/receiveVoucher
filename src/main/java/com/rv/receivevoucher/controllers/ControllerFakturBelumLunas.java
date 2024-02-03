@@ -21,4 +21,9 @@ public class ControllerFakturBelumLunas {
         System.out.println("control");
         return servFtBlLs.getFakBlmLunas(custCd);
     }
+
+    @GetMapping("/fakbl/paymentprocess")
+    public String PaymentProcess(String fmNo, String noUrut, String userBy){
+        return servFtBlLs.PaymentProcess(fmNo, noUrut, userBy);
+    }
 }

@@ -19,4 +19,11 @@ public class ServiceFakturBelumLunas {
     public List<VFakturBelumLunas> getFakBlmLunas(String custCode){
         return repoFakBlLs.findByFblCustCode(custCode);
     }
+
+    public String PaymentProcess(String fmNo, String noUrut, String userBy){
+        return repoFakBlLs.PaymentProcess(fmNo, noUrut, userBy);
+    }
+    public String jurnalPaymnet(String nmr, String month, String year){
+       return repoFakBlLs.jurnalPaymnet(nmr, month, year);
+    }
 }
