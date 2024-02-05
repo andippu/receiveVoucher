@@ -27,7 +27,7 @@ public class ServiceFakturTmpMaster {
         return repoFTM.findByFtmNo(ftmno);
     }
 
-  /*  public String updateTFm(Integer ftmNo, String cusId, String cusname){
+   public String updateTFm(Integer ftmNo, String cusId, String cusname){
 
        FakturTmpMaster existingFaktur = repoFTM.findById(ftmNo)
                 .orElseThrow(() -> new NotFoundException("SPB not found with no: " + ftmNo));
@@ -40,7 +40,7 @@ public class ServiceFakturTmpMaster {
         return "Update Successfuly";
 
 
-    }*/
+    }
 
 
 }

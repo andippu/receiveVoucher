@@ -14,7 +14,7 @@ public class ServiceBiayaAnalisaMaster {
     @Autowired
     IBiayaAnalisaMaster repoBiAnMst;
 
-    public List<BiayaAnalisaMaster> getAnaliasMStList(String baType){
-        return repoBiAnMst.findByBaTipe(baType);
+    public List<BiayaAnalisaMaster> getAnaliasMStList(String dt, String baType){
+        return repoBiAnMst.getBiAnMstDate(dt,baType);
     }
 }

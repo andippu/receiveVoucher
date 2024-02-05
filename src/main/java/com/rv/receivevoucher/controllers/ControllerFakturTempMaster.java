@@ -32,7 +32,7 @@ public class ControllerFakturTempMaster {
         return servFTM.getTfmById(ftmno);
     }
 
-   /* @GetMapping("/faktmpmas/updfaktur")
+    @GetMapping("/faktmpmas/updfaktur")
     public String updateFaktur(Integer ftmNo, String cusId) {
         ResponseEntity<String> responseEntity=restTemplate.getForEntity("http://localhost:9501/accmaster-svc/cust/getcustname?cusno="+cusId,
                        String.class);
@@ -41,5 +41,5 @@ public class ControllerFakturTempMaster {
         String updated = servFTM.updateTFm(ftmNo, cusId, cusname);
        // return ResponseEntity.ok(updated);
         return updated;
-    }*/
+    }
 }

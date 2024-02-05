@@ -21,7 +21,7 @@ public class ServiceVFakturMaster {
 
     public List<VFakturMaster> getAllFaktur(){
         List<VFakturMaster> allFak= repoVFM.findAll();
-       // log.info("all fak : "+ allFak.size());
+       log.info("all fak : "+ allFak.size());
 
         return allFak;
     }

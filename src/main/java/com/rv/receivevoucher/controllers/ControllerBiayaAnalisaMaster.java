@@ -20,6 +20,6 @@ public class ControllerBiayaAnalisaMaster {
 
     @GetMapping("/bianmst/getbianmstlist")
     public List<BiayaAnalisaMaster> getAnaliasMStList(String baType){
-        return servBiAnMst.getAnaliasMStList(baType);
+        return servBiAnMst.getAnaliasMStList(baType, baType);
     }
 }
