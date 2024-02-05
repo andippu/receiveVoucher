@@ -26,7 +26,7 @@ public class ServiceFakturTmpMaster {
     public FakturTmpMaster getTfmById(Integer ftmno){
         return repoFTM.findByFtmNo(ftmno);
     }
-
+/*
    public String updateTFm(Integer ftmNo, String cusId, String cusname){
 
        FakturTmpMaster existingFaktur = repoFTM.findById(ftmNo)
@@ -41,6 +41,6 @@ public class ServiceFakturTmpMaster {
 
 
     }
-
+*/
 
 }

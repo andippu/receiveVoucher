@@ -12,6 +12,6 @@ import java.util.List;
 public interface IBiayaAnalisaMaster extends JpaRepository <BiayaAnalisaMaster,String> {
     List<BiayaAnalisaMaster> findByBaTipe(String baType);
 
-    @Query(value = "SELECT * FROM BIAYA_ANALISA_MASTER S WHERE TO_CHAR(BA_DATE,'Mon dd yyyy')=?1 and TIPE=?2",nativeQuery = true)
+    @Query(value = "SELECT * FROM BIAYA_ANALISA_MASTER S WHERE TO_CHAR(S.BA_DATE,'Mon dd yyyy')=?1 AND S.TIPE=?2",nativeQuery = true)
     public List<BiayaAnalisaMaster> getBiAnMstDate(String dt, String tp);
 }
