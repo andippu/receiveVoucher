@@ -27,7 +27,7 @@ public class ControllerDistBayarMaster {
     
     @GetMapping("/byrdist/getbyrmst")
     public Optional<DistBayarMaster> getByrMst(String dt){
-        System.out.println("test dt :"+dt);
+    //    System.out.println("test dt :"+dt);
           return servDisByrMs.getByrMst(dt);
     }
 @DeleteMapping("/byrdist/delDistById")

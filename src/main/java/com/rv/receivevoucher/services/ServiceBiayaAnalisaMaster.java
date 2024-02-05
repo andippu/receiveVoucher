@@ -17,4 +17,8 @@ public class ServiceBiayaAnalisaMaster {
     public List<BiayaAnalisaMaster> getAnaliasMStList(String dt, String baType){
         return repoBiAnMst.getBiAnMstDate(dt,baType);
     }
+    
+    public BiayaAnalisaMaster getAnaliasMStSingle (String fmNo) {
+    	return repoBiAnMst.findBybaFmNo(fmNo);
+    }
 }

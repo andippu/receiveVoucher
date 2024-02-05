@@ -19,7 +19,13 @@ public class ControllerBiayaAnalisaMaster {
     ServiceBiayaAnalisaMaster servBiAnMst;
 
     @GetMapping("/bianmst/getbianmstlist")
-    public List<BiayaAnalisaMaster> getAnaliasMStList(String baType){
-        return servBiAnMst.getAnaliasMStList(baType, baType);
+    public List<BiayaAnalisaMaster> getAnaliasMstList(String dt, String baType){
+        System.out.println("tgl :"+dt);
+        return servBiAnMst.getAnaliasMStList(dt, baType);
+    }
+    
+    @GetMapping("/bianmst/getbianmstsingle")
+    public BiayaAnalisaMaster getAnaliasMStSingle (String fmNo) {
+    	return servBiAnMst.getAnaliasMStSingle(fmNo);
     }
 }
