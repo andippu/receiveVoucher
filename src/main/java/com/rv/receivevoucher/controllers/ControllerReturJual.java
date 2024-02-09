@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.awt.*;
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 
 @CrossOrigin(origins ={ "https://localhost:4200","https://localhost:9501"}, maxAge = 3600)
@@ -23,9 +24,9 @@ public class ControllerReturJual {
         return servretjl.getReturJualList(dt);
     }
     
-    @GetMapping("/returjual/getreturjuallistall")
-    public List<ReturJual> getReturJualAll(){
-    	return servretjl.getReturJualAll();
+    @GetMapping("/returjual/getreturjualById")
+    public Optional<ReturJual> getReturJualAll(String id){
+    	return servretjl.getReturJualById(id);
     }
 
 }
