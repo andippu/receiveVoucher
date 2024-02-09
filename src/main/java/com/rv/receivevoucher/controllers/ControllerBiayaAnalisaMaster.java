@@ -26,6 +26,6 @@ public class ControllerBiayaAnalisaMaster {
     
     @GetMapping("/bianmst/getbianmstsingle")
     public BiayaAnalisaMaster getAnaliasMStSingle (String fmNo) {
-    	return servBiAnMst.getAnaliasMStSingle(fmNo);
+      return servBiAnMst.getAnaliasMStSingle(fmNo);
     }
 }
