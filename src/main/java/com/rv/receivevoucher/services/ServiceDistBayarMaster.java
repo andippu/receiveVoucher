@@ -32,7 +32,7 @@ public class ServiceDistBayarMaster {
 
     public String UpdDistPay ( DistBayarMaster distByr){
         DistBayarMaster db= repoDistByMs.saveAndFlush(distByr);
-        System.out.println("id :"+db.getMbdUrut().toString());
+       // System.out.println("id :"+db.getMbdUrut().toString());
         return "Update Successfuly";
     }
 

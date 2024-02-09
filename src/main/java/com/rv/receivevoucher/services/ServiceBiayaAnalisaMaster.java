@@ -19,6 +19,6 @@ public class ServiceBiayaAnalisaMaster {
     }
     
     public BiayaAnalisaMaster getAnaliasMStSingle (String fmNo) {
-    	return repoBiAnMst.findBybaFmNo(fmNo);
+      return repoBiAnMst.findBybaFmNo(fmNo);
     }
 }
