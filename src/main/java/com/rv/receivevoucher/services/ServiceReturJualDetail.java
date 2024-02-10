@@ -18,12 +18,21 @@ public class ServiceReturJualDetail {
 	@Autowired
 	IReturJualDetail reportjldtl;
 	
-	public List<ReturJualDetail> getRtJlDtlById(String id){
+	public List<ReturJualDetail> getRtJlDtlList(String id){
 		return reportjldtl.findByRjdNo(id);
 	}
 	
 	public Optional<ReturJualDetail> getRtJlDtlSingle(String id){
 		return reportjldtl.findByRjdFmNo(id);
+	}
+	
+	public List<ReturJualDetail> getalllist(){
+		return reportjldtl.findAll();
+	}
+	
+	public String addSaveReturDetail (ReturJualDetail data) {
+		reportjldtl.save(data);
+		return "Submit Successfully";
 	}
 
 }

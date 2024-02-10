@@ -27,6 +27,11 @@ public class ServiceReturJual {
     public Optional<ReturJual> getReturJualById(String id){
     	return reportjl.findById(id);
     }
+    
+    public String saveUpdateReturJual(ReturJual dt) {
+    	reportjl.save(dt);
+    	return "Submit Successfully";
+    }
 
 
 }

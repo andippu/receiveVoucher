@@ -28,5 +28,12 @@ public class ControllerReturJual {
     public Optional<ReturJual> getReturJualAll(String id){
     	return servretjl.getReturJualById(id);
     }
+    
+    @PostMapping("/returjual/saveupdatertljl")
+    public String saveUpdateReturJual(@RequestBody ReturJual dt) {
+      //  System.out.println("update save :"+dt);
+    	servretjl.saveUpdateReturJual(dt);
+    	return "Sumbit Successfully";
+    }
 
 }
