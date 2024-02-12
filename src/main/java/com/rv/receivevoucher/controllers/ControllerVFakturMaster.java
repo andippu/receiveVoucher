@@ -25,6 +25,21 @@ public class ControllerVFakturMaster {
     public List<VFakturMaster> getAllFaktur(){
         return ServFM.getAllFaktur();
     }
+    
+    @GetMapping("/fakmas/getfmbybpjs")
+    public List<VFakturMaster> getFakturByBpjs(String dt){
+        return ServFM.getFakturByBpjs(dt);
+    }
+    
+    @GetMapping("/fakmas/getfmbycod")
+    public List<VFakturMaster> getFakturByCod(String dt){
+        return ServFM.getFakturByCod(dt);
+    }
+    
+    @GetMapping("/fakmas/getfmbygn")
+    public List<VFakturMaster> getFakturByGn(String dt){
+        return ServFM.getFakturByGn(dt);
+    }
 
 
 }

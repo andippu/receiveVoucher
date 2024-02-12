@@ -25,5 +25,17 @@ public class ServiceVFakturMaster {
 
         return allFak;
     }
-
+    
+    public List<VFakturMaster> getFakturByBpjs(String dt){
+        return repoVFM.getFakturByBpjs(dt);
+    }
+    
+    public List<VFakturMaster> getFakturByCod(String dt){
+        return repoVFM.getFakturByCod(dt);
+    }
+    
+    public List<VFakturMaster> getFakturByGn(String dt){
+        return repoVFM.getFakturByGn(dt);
+    }
+    
 }
