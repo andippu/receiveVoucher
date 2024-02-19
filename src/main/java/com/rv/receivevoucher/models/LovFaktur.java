@@ -31,17 +31,16 @@ public class LovFaktur {
 	    @Column(name="LFM_BATCHNO", nullable = false)
 	    private String lfmBatchNo;
 	    
+	    @Column(name="LFM_BR_NAME")
+	    private String lfmBrName;	    
+	    
 	    @Column(name="LFM_CUST_CODE")
 	    private String lfmCustCode;
 	    
-	    @Column(name="LFM_PRICE", nullable = false)
+	    @Column(name="LFM_PRICE")
 	    private long lfmPrice;
 	    
-	    @Column(name="LFM_CUS_POT", nullable = false)
+	    @Column(name="LFM_CUS_POT")
 	    private BigDecimal lfmCustPot;
-	    
-	
-	   
-	   
 
 }

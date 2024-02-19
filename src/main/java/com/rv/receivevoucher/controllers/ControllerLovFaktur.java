@@ -18,8 +18,8 @@ public class ControllerLovFaktur {
 	ServiceLovFaktur servLovFak;
 	
 	 @GetMapping("/lovfaktur/getlovfaktur")
-	public List<LovFaktur> getLovFakturAll(String custCd){
-		return servLovFak.getLovFakturAll(custCd);
+	public List<LovFaktur> getLovFakturAll(String custcd){
+		return servLovFak.getLovFakturAll(custcd);
 		
 	}
 
