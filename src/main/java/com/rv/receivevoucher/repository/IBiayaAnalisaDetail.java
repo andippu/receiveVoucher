@@ -13,4 +13,6 @@ public interface IBiayaAnalisaDetail extends JpaRepository <BiayaAnalisaDetail,S
 
     List<BiayaAnalisaDetail> findByBadFmNo(String fmno);
     BiayaAnalisaDetail findByBadFmNoAndBadName(String fmno, String FmName);
+    
+   
 }
