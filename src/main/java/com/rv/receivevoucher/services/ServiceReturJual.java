@@ -1,7 +1,5 @@
 package com.rv.receivevoucher.services;
 
-
-
 import com.rv.receivevoucher.models.ReturJual;
 import com.rv.receivevoucher.repository.IReturJual;
 import com.rv.receivevoucher.repository.IReturJualDetail;
@@ -12,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
-
 
 @Service
 public class ServiceReturJual {
