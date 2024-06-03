@@ -17,5 +17,9 @@ public class ServiceFakturMaster {
     public List<FakturMaster> getFakturByNo(String fktNo){
         return repoFM.getFakturByNoFaktur(fktNo);
     }
+    
+    public String runHitungUlangFaktur(String P_FKT, String P_FKT2) {
+    	return repoFM.runHitungUlangFaktur(P_FKT, P_FKT2);
+    }
 
 }

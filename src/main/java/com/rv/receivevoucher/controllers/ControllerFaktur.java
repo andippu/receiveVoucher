@@ -19,4 +19,9 @@ public class ControllerFaktur {
     public List<FakturMaster> getFakturByNo(String fktNo) {
         return servFM.getFakturByNo(fktNo);
     }
+    
+    @GetMapping("/fakmas/hitungulangfaktur")
+    public String runHitungUlangFaktur(String P_FKT, String P_FKT2) {
+    	return servFM.runHitungUlangFaktur(P_FKT, P_FKT2);
+    }
 }
