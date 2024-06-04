@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+import java.util.Date;
 import java.util.List;
 
 @Repository
@@ -18,5 +19,8 @@ public interface IFakturMasterRepository extends JpaRepository<FakturMaster,Stri
     
 	@Procedure(procedureName = "HIT_DSO")
 	public String runHitungUlangFaktur(String P_FKT, String P_FKT2);
+	
+	
+	
 
 }

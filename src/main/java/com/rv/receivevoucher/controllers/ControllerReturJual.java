@@ -31,7 +31,6 @@ public class ControllerReturJual {
     
     @PostMapping("/returjual/saveupdatertljl")
     public String saveUpdateReturJual(@RequestBody ReturJual dt) {
-      //  System.out.println("update save :"+dt);
     	servretjl.saveUpdateReturJual(dt);
     	return "Sumbit Successfully";
     }
