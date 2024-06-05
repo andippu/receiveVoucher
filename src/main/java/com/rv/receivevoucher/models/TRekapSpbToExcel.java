@@ -37,6 +37,5 @@ public class TRekapSpbToExcel {
 	  
 	  @Column(name="TRSE_DISTRIBUTOR",length=60,  nullable = false)
 	  private String trseDistributor;
-
 	 
 }
