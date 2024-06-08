@@ -19,6 +19,9 @@ public class VFakturMasterSingle {
     @Id
     @Column(name = "VFM_NO", length = 40, nullable = false)
     private String vfmNo;
+    
+    @Column(name = "VFM_NO_PJK", length = 40)
+    private String vfmNopJK;
 
     @Column(name = "VFM_DATE")
     private Date vfmDate;

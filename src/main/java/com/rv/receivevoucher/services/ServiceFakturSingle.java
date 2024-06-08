@@ -16,7 +16,12 @@ public class ServiceFakturSingle {
     public List<VFakturMasterSingle> getFakSingleNo(String vfmNo){
         return repoFmSingle.getFakSingleByNo(vfmNo);
     }
+    
     public List<VFakturMasterSingle> getFakSingleNoUp(String vfmNo, String vfmDateParam, String vfmType){
         return repoFmSingle.getFakSingleByNoUp(vfmNo, vfmDateParam, vfmType);
+    }
+    
+    public String GetRecalcFaktur(String P_FM_NO, String P_FM_NO_PJK) {
+    	return repoFmSingle.RecalcFaktur(P_FM_NO, P_FM_NO_PJK);
     }
 }

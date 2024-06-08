@@ -25,4 +25,9 @@ public class ControllerFakturSingle {
     public List<VFakturMasterSingle> getFakSingleUp(String vfmNo,String vfmDateParam, String vfmType){
         return servFMSingle.getFakSingleNoUp(vfmNo, vfmDateParam, vfmType);
     }
+    
+    @GetMapping("/fmsingle/recalcfaktur")
+    public String GetRecalcFaktur(String P_FM_NO, String P_FM_NO_PJK) {
+    	return servFMSingle.GetRecalcFaktur(P_FM_NO, P_FM_NO_PJK);
+    }
 }

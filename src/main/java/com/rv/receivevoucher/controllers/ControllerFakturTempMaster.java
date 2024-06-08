@@ -26,6 +26,11 @@ public class ControllerFakturTempMaster {
     public String exePUploadSpbs(){
         return servFTM.exePUploadSpbs();
     }
+    
+    @GetMapping("/faktmpmas/prosesUploadSPB")
+    public String exeInsertUpFaktur(){
+        return servFTM.exeInsertUpFaktur();
+    }
 
     @GetMapping("/faktmpmas/getfakturbyid")
     public FakturTmpMaster getTfmById(Integer ftmno){

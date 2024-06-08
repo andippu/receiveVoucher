@@ -11,6 +11,9 @@ import java.util.List;
 public interface IFakturTmpMaster extends JpaRepository<FakturTmpMaster,Integer> {
     @Procedure(procedureName = "P_UPLOAD_SPB")
     public String exePUploadSpb();
+    
+    @Procedure(procedureName = "INSERT_DATA")
+    public String exeInsertUpFaktur();
 
      public FakturTmpMaster findByFtmNo(Integer id);
 }

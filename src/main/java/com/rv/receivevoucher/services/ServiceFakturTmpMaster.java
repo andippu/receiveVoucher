@@ -22,6 +22,10 @@ public class ServiceFakturTmpMaster {
     public String exePUploadSpbs(){
         return repoFTM.exePUploadSpb();
     }
+    
+    public String exeInsertUpFaktur(){
+        return repoFTM.exeInsertUpFaktur();
+    }
 
     public FakturTmpMaster getTfmById(Integer ftmno){
         return repoFTM.findByFtmNo(ftmno);
