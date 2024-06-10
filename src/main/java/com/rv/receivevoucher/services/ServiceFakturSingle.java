@@ -6,6 +6,7 @@ import com.rv.receivevoucher.repository.IVFakturMasterSingle;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -21,7 +22,7 @@ public class ServiceFakturSingle {
         return repoFmSingle.getFakSingleByNoUp(vfmNo, vfmDateParam, vfmType);
     }
     
-    public String GetRecalcFaktur(String P_FM_NO, String P_FM_NO_PJK) {
-    	return repoFmSingle.RecalcFaktur(P_FM_NO, P_FM_NO_PJK);
+    public String GetRecalcFaktur(String P_FM_NO, String P_FM_NO_PJK, BigDecimal P_FM_DISCOUNT) {
+    	return repoFmSingle.RecalcFaktur(P_FM_NO, P_FM_NO_PJK, P_FM_DISCOUNT);
     }
 }

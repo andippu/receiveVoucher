@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @RestController
@@ -27,7 +28,7 @@ public class ControllerFakturSingle {
     }
     
     @GetMapping("/fmsingle/recalcfaktur")
-    public String GetRecalcFaktur(String P_FM_NO, String P_FM_NO_PJK) {
-    	return servFMSingle.GetRecalcFaktur(P_FM_NO, P_FM_NO_PJK);
+    public String GetRecalcFaktur(String P_FM_NO, String P_FM_NO_PJK,  BigDecimal P_FM_DISCOUNT) {
+    	return servFMSingle.GetRecalcFaktur(P_FM_NO, P_FM_NO_PJK, P_FM_DISCOUNT);
     }
 }

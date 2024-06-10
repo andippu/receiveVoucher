@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.query.Procedure;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Repository
@@ -19,5 +20,5 @@ public interface IVFakturMasterSingle extends JpaRepository<VFakturMasterSingle,
     public List<VFakturMasterSingle> getFakSingleByNoUp(String vfmNo, String vfmDateParam, String vfmType);
     
     @Procedure(procedureName = "P_FORM_FAKTUR_RECALCULATE")
-    String RecalcFaktur(String P_FM_NO, String P_FM_NO_PJK);
+    String RecalcFaktur(String P_FM_NO, String P_FM_NO_PJK, BigDecimal P_FM_DISCOUNT);
 }
