@@ -17,4 +17,6 @@ public interface IBiayaAnalisaMaster extends JpaRepository <BiayaAnalisaMaster,S
     
    public BiayaAnalisaMaster findBybaFmNo(String fmNo);
    
+   public  List<BiayaAnalisaMaster> findByBaLunas(Integer status);
+   
 }

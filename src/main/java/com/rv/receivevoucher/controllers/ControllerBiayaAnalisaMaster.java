@@ -28,4 +28,10 @@ public class ControllerBiayaAnalisaMaster {
     public BiayaAnalisaMaster getAnaliasMStSingle (String fmNo) {
       return servBiAnMst.getAnaliasMStSingle(fmNo);
     }
+    
+    @GetMapping("/bianmst/getbianblmlunas")
+    public List<BiayaAnalisaMaster> getBiayaAnalisaBlmLunas(){
+    	Integer status=0;
+        return servBiAnMst.getBiayaAnalisaBlmLunas(status);
+    }
 }

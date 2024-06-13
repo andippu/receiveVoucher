@@ -20,8 +20,24 @@ public class ControllerFaktur {
         return servFM.getFakturByNo(fktNo);
     }
     
+    @GetMapping("/fakmas/getFakturBlmLunas")
+    public List<FakturMaster> getFakturBlmLunas() {
+    	String status="0";
+        return servFM.getFakturBlmLunas(status);
+    }
+    
     @GetMapping("/fakmas/hitungulangfaktur")
     public String runHitungUlangFaktur(String P_FKT, String P_FKT2) {
     	return servFM.runHitungUlangFaktur(P_FKT, P_FKT2);
+    }
+    
+    @GetMapping("/fakmas/deletefaktur")
+    public String deleteFaktur(String p_fmno) {
+    	return servFM.deleteFaktur(p_fmno);
+    }
+    
+    @GetMapping("/fakmas/pelunasanfaktur")
+    public String lunasFaktur(String p_fmno, String p_type) {
+    	return servFM.lunasFaktur(p_fmno, p_type);
     }
 }

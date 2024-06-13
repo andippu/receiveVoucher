@@ -21,4 +21,8 @@ public class ServiceBiayaAnalisaMaster {
     public BiayaAnalisaMaster getAnaliasMStSingle (String fmNo) {
       return repoBiAnMst.findBybaFmNo(fmNo);
     }
+    
+    public List<BiayaAnalisaMaster> getBiayaAnalisaBlmLunas(Integer status){
+        return repoBiAnMst.findByBaLunas(status);
+    }
 }

@@ -18,8 +18,20 @@ public class ServiceFakturMaster {
         return repoFM.getFakturByNoFaktur(fktNo);
     }
     
+    public List<FakturMaster> getFakturBlmLunas(String status){
+        return repoFM.findByFmLunas(status);
+    }
+    
     public String runHitungUlangFaktur(String P_FKT, String P_FKT2) {
     	return repoFM.runHitungUlangFaktur(P_FKT, P_FKT2);
+    }
+    
+    public String deleteFaktur(String p_fmno) {
+    	return repoFM.deleteFakturMaster(p_fmno);
+    }
+    
+    public String lunasFaktur(String p_fmno, String p_type) {
+    	return repoFM.pelunasanFakturMaster(p_fmno, p_type);
     }
 
 }
