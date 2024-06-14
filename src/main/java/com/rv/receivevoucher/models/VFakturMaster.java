@@ -7,6 +7,8 @@ import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 import java.util.Date;
 
 @Data
@@ -33,34 +35,34 @@ public class VFakturMaster {
     private Date vfmJthTemp;
 
     @Column(name = "VFM_TOTAL_SPB")
-    private Integer vfmTotalSpb;
+    private BigDecimal vfmTotalSpb;
 
     @Column(name = "VFM_POTONGAN")
-    private Integer vfmPotongan;
+    private BigDecimal vfmPotongan;
 
     @Column(name = "VFM_TOTAL1")
-    private Integer vfmTotal1;
+    private BigDecimal vfmTotal1;
 
     @Column(name = "VFM_DISCOUNT")
-    private Integer vfmDiscount;
+    private BigDecimal vfmDiscount;
 
     @Column(name = "VFM_TOTAL_FAKTUR")
-    private Integer vfmTotalFaktur;
+    private BigDecimal vfmTotalFaktur;
 
     @Column(name = "VFM_PPN")
-    private Integer vfmPpn;
+    private BigDecimal vfmPpn;
 
     @Column(name = "VFM_PPH23")
-    private Integer vfmPph23;
+    private BigDecimal vfmPph23;
 
     @Column(name = "VFM_MATERAI")
-    private Integer vfmMaterai;
+    private BigDecimal vfmMaterai;
 
     @Column(name = "VFM_TOTAL_ALL")
-    private Integer vfmTotalAll;
+    private BigDecimal vfmTotalAll;
 
     @Column(name = "VFM_PPH22")
-    private Integer vfmPph22;
+    private BigDecimal vfmPph22;
 
     @Column(name = "VFM_STATUS")
     private String vfmStatus;

@@ -70,40 +70,40 @@ public class FakturAll {
 	    private String fmOto;
 
 	    @Column(name="FM_DISCOUNT_RP")
-	    private Integer fmDiscountRp;
+	    private BigDecimal fmDiscountRp;
 
 	    @Column(name="FM_PPH22", length = 40)
 	    private String fmPhh22;
 
 	    @Column(name="FM_NILAI_HNA")
-	    private Integer fmNilaiHna;
+	    private BigDecimal fmNilaiHna;
 
 	    @Column(name="FM_POTONGAN")
-	    private Integer fmPotogan;
+	    private BigDecimal fmPotogan;
 
 	    @Column(name="FM_NILAI_HNA2")
-	    private Integer fmNilaiHna2;
+	    private BigDecimal fmNilaiHna2;
 
 	    @Column(name="FM_DISCOUNT_SEL")
-	    private Integer fmDiscountSel;
+	    private BigDecimal fmDiscountSel;
 
 	    @Column(name="FM_TOTAL")
-	    private Integer fmTotal;
+	    private BigDecimal fmTotal;
 
 	    @Column(name="FM_PPN")
-	    private Integer fmPpn;
+	    private BigDecimal fmPpn;
 
 	    @Column(name="FM_PPH23")
-	    private Integer fmPph23;
+	    private BigDecimal fmPph23;
 
 	    @Column(name="FM_MATERAI")
-	    private Integer fmMaterai;
+	    private BigDecimal fmMaterai;
 
 	    @Column(name="FM_TOT_SEL")
-	    private Integer fmTotSel;
+	    private BigDecimal fmTotSel;
 
 	    @Column(name="FM_PPH_22")
-	    private Integer fmPph222;
+	    private BigDecimal fmPph222;
 
 	    @Column(name="FM_LUNAS", length = 1)
 	    private String fmLunas;
@@ -115,10 +115,10 @@ public class FakturAll {
 	    private Date fmCreDate;
 
 	    @Column(name="FM_POT2")
-	    private Integer fmPot2;
+	    private BigDecimal fmPot2;
 
 	    @Column(name="FM_TOTAL2")
-	    private Integer fmTotal2;
+	    private BigDecimal fmTotal2;
 
 	    @Column(name="FM_WIL_ID")
 	    private Integer fmWilId;
