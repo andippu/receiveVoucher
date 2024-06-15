@@ -23,5 +23,10 @@ public class ServiceSalesOrderAll {
 	public List<SalesOrderAll> getSalesOrderAllCU (String msno){
 		return repoSol.findBySolDsoMsoNo(msno);
 	}
+	
+	public String saveUpdateSOAll(SalesOrderAll soal) {
+		repoSol.save(soal);
+		return "Submit Successfully";
+	}
 
 }

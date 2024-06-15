@@ -26,4 +26,10 @@ public class ControllerSalesOrderAll {
 	public List<SalesOrderAll> getSalesOrderAllCU (String msno){
 		return servSol.getSalesOrderAllCU(msno);
 	}
+	
+	@PostMapping("/soall/saveupdsoall")
+	public String saveUpdateSOAll(@RequestBody SalesOrderAll soal) {
+		
+		return servSol.saveUpdateSOAll(soal);
+	}
 }

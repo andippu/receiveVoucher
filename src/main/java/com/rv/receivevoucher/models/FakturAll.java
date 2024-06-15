@@ -12,6 +12,8 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -24,6 +26,7 @@ public class FakturAll {
 	    private String fmNo;
 
 	    @Column(name="FM_DATE")
+	    @JsonFormat(pattern="dd/MM/yyyy")
 	    private Date fmdDate;
 
 	    @Column(name="FM_PB_NO_SPB",length=40)
@@ -33,10 +36,11 @@ public class FakturAll {
 	    private String fmMsoNo;
 
 	    @Column(name="FM_JATUH_TEMPO")
+	    @JsonFormat(pattern="dd/MM/yyyy")
 	    private Date fmJatuhTempo;
 
 	    @Column(name="FM_TOTAL_VALUE")
-	    private Integer fmTotalValue;
+	    private BigDecimal fmTotalValue;
 
 	    @Column(name="FM_CHGUSER", length = 40)
 	    private String fmChgUser;

@@ -3,6 +3,7 @@ package com.rv.receivevoucher.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +16,7 @@ import com.rv.receivevoucher.services.ServiceFakturAll;
 
 
 @RestController
+@CrossOrigin("http://localhost:4200")
 public class ControllerFakturAll {
 	@Autowired
 	ServiceFakturAll servFAll;
@@ -28,5 +30,15 @@ public class ControllerFakturAll {
 	public List<FakturAll> getFakturAllCu (String fmno){
 		return servFAll.getFakturAllCu(fmno);
 	}
+	 
+	 @GetMapping("/fakturall/hittotalform")
+	 public String exehitTotalForm(String p_fmno) {
+			return servFAll.exehitTotalForm(p_fmno);
+		}
+	 
+	 @PostMapping("/fakturall/saveupdfakturall")
+	 public String saveUpdateFakturAll (@RequestBody FakturAll fall) {
+			return servFAll.saveUpdateFakturAll(fall);
+		}
 
 }

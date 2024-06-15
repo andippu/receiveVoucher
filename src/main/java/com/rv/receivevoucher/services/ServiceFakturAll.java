@@ -22,4 +22,13 @@ public class ServiceFakturAll {
 	public List<FakturAll> getFakturAllCu (String fmno){
 		return repoFAll.findByFmNo(fmno);
 	}
+	
+	public String saveUpdateFakturAll ( FakturAll fall) {
+		repoFAll.save(fall);
+		return "Submit Successfully";
+	}
+	
+	public String exehitTotalForm(String p_fmno) {
+		return repoFAll.hitTotalForm(p_fmno);
+	}
 }
