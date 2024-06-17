@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.1.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Blank_A4" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b279c484-abb4-46c8-9640-db525cdd678f">
+	<parameter name="tandatangan" class="java.lang.String"/>
+	
+	<field name="rfcsFmNo" class="java.lang.String">		
+	</field>
+	<field name="rfcsCustName" class="java.lang.String">		
+	</field>
+	<field name="rfcsAddr1" class="java.lang.String">	
+	</field>
+	<field name="rfcsAddr2" class="java.lang.String">
+	</field>
+	<field name="rfcsKota" class="java.lang.String">		
+	</field>
+	<field name="rfcsDate" class="java.lang.String">
+	</field>
+	<field name="rfcsCustCode" class="java.lang.String">		
+	</field
+	<field name="rfcsNpwp" class="java.lang.String">
+	</field>
+	<field name="rfcsJtempo" class="java.lang.String">
+	</field>
+	<field name="rfcsDesc" class="java.lang.String">
+	</field>
+	<field name="rfcsDiscount" class="java.math.BigDecimal">
+	</field>
+	<field name="rfcsPot2" class="java.math.BigDecimal">
+	</field>
+	<field name="rfcsTotal" class="java.math.BigDecimal">
+	</field>
+	<field name="rfcsPpn" class="java.math.BigDecimal">
+	</field>
+	<field name="rfcsPph22" class="java.math.BigDecimal">
+	</field>
+	<field name="rfcsTotSel" class="java.math.BigDecimal">
+	</field>
+	<field name="rfcsTotal2" class="java.math.BigDecimal">
+	</field>
+	<field name="rfcsMaterai" class="java.math.BigDecimal">	
+	</field>
+	<field name="rfcsNilaiHna" class="java.math.BigDecimal">	
+	</field>
+	<field name="rfcsPotongan" class="java.math.BigDecimal">	
+	</field>
+	<field name="rfcsHna2" class="java.math.BigDecimal">		
+	</field>
+	<field name="rfcsBarang" class="java.lang.String">		
+	</field>
+	<field name="rfcsBrgHrg" class="java.math.BigDecimal">	
+	</field>
+	<field name="rfcsBrgPotongan" class="java.math.BigDecimal">		
+	</field>
+	<field name="rfcsBrgQty" class="java.math.BigDecimal">
+	</field>
+	<field name="rfcsBrgTotal" class="java.math.BigDecimal">
+	</field>
+	<field name="rfcsTotalValue" class="java.math.BigDecimal">
+	</field>
+	<variable name="nourut" class="java.lang.Short" resetType="Group" resetGroup="Group1" calculation="Count">
+		<variableExpression><![CDATA[$F{RFCS_BARANG}]]></variableExpression>
+	</variable>
+	<variable name="TandaTangan" class="java.lang.String"/>
+	<group name="Group1" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{rfcsFmNo}]]></groupExpression>
+		<groupHeader>
+			<band height="157">
+				<textField>
+					<reportElement x="170" y="40" width="110" height="19" uuid="498930c7-c7bf-489f-a0e8-c4a8ac556733"/>
+					<textFieldExpression><![CDATA[$F{rfcsFmNo}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="350" y="7" width="210" height="13" uuid="1a36c58e-0b48-4558-972e-4feb293b2b0e"/>
+					<textFieldExpression><![CDATA[$F{rfcsCustName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="350" y="20" width="210" height="15" uuid="14c184d5-d3b3-41e0-8350-272cc533e654"/>
+					<textFieldExpression><![CDATA[$F{rfcsAddr1}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="350" y="35" width="210" height="15" uuid="1982e040-d0ac-4b9f-8fae-5da9c6b302ed"/>
+					<textFieldExpression><![CDATA[$F{rfcsAddr2}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="350" y="50" width="210" height="17" uuid="647f3b51-2ff2-4f47-b5af-0f88f2cc72bb"/>
+					<textFieldExpression><![CDATA[$F{rfcsKota}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="78" width="100" height="16" uuid="c3deaf11-0b4e-4350-b16a-164a06dd05ec"/>
+					<text><![CDATA[Keterangan :]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="60" y="78" width="100" height="21" uuid="8c7810ee-f977-4c63-93f6-390f1632f50b"/>
+					<textFieldExpression><![CDATA[$F{rfcsDesc}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="80" y="114" width="100" height="17" uuid="15024d4d-0bef-40d7-9f3e-f299c526bce8"/>
+					<textFieldExpression><![CDATA[$F{rfcsDate}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="190" y="114" width="60" height="17" uuid="2f408a19-5b9e-478a-97ab-5fed9f10fb19"/>
+					<textFieldExpression><![CDATA[$F{rfcsCustCode}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="260" y="114" width="100" height="17" uuid="4d269390-c1c8-4064-a582-a0e6bc8c8e1d"/>
+					<textFieldExpression><![CDATA[$F{rfcsNpwp}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="390" y="114" width="100" height="17" uuid="a32bb402-0d8e-419e-8aed-f3d85980c51a"/>
+					<textFieldExpression><![CDATA[$F{rfcsJtempo}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="325">
+				<textField pattern="#,##0.###;#,##0.###-">
+					<reportElement x="460" y="193" width="100" height="20" uuid="80045af1-a759-409d-8165-907ece80b559"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{rfcsTotSel}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.###;#,##0.###-">
+					<reportElement x="0" y="193" width="80" height="20" uuid="9b0ccb8e-5749-4393-aad2-061f430a3c77"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression><![CDATA[$F{rfcsTotal}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.###;#,##0.###-" isBlankWhenNull="true">
+					<reportElement x="80" y="193" width="80" height="20" uuid="3e5a1e51-46dd-4fc6-b000-ac5203456f89"/>
+					<textElement textAlignment="Left"/>
+					<textFieldExpression><![CDATA[$F{rfcsPotongan}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.###;#,##0.###-">
+					<reportElement x="160" y="194" width="70" height="20" uuid="32fa0b9f-94f4-44e0-83c7-662e7ef8061d"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{rfcsHna2}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.###;#,##0.###-">
+					<reportElement x="240" y="194" width="60" height="20" uuid="0b6bb171-5cce-4d8f-9dec-cfde4373cd49"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{rfcsPpn}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.###;#,##0.###-">
+					<reportElement x="360" y="194" width="70" height="20" uuid="37a08be8-df06-4153-b08f-98cc4729b726"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{rfcsMaterai}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="191" y="241" width="20" height="14" uuid="1d16fa2c-6f2d-4015-ae9a-51bc3ea44c5d"/>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="211" y="241" width="26" height="14" uuid="efaba495-9d85-4363-b2d3-d0fcf2007951"/>
+					<text><![CDATA[dari]]></text>
+				</staticText>
+				<textField evaluationTime="Report">
+					<reportElement x="237" y="241" width="36" height="14" uuid="02bfe3bc-5298-41c3-8b97-7ed489552630"/>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="410" y="231" width="40" height="14" uuid="084ebbe0-676e-4958-a232-693f849b36f4"/>
+					<text><![CDATA[Jakarta, ]]></text>
+				</staticText>
+				<textField pattern="dd-MM-yyyy">
+					<reportElement x="450" y="231" width="94" height="14" uuid="793e6086-29ee-4390-af93-0f8326d38510"/>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="361" y="180" width="69" height="13" uuid="cf2b56f2-86a2-47d1-91c5-9dce55f5e8e0"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Materai]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="410" y="295" width="150" height="15" uuid="14d11ff8-5a96-4b37-b6e5-158184374707"/>
+					<textFieldExpression><![CDATA[$P{tandatangan}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="3" width="200" height="15" uuid="ef5decab-41da-424f-ab23-57e3780f1067"/>
+				<textFieldExpression><![CDATA[$F{rfcsBarang}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="3" width="18" height="15" printWhenGroupChanges="Group1" uuid="0c1005c5-8fc4-4bd1-82d3-d754815a58ef"/>
+				<textFieldExpression><![CDATA[$V{nourut}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;#,##0.###-">
+				<reportElement x="240" y="3" width="42" height="15" uuid="135784af-8e9d-4f38-9f53-263689c34555"/>
+				<textFieldExpression><![CDATA[$F{rfcsBrgQty}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;#,##0.###-">
+				<reportElement x="290" y="4" width="92" height="14" uuid="807d98b4-2aa1-4b38-b450-ac9f64d69f61"/>
+				<textFieldExpression><![CDATA[$F{rfcsBrgHrg}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;#,##0.###-" isBlankWhenNull="true">
+				<reportElement isPrintRepeatedValues="false" x="390" y="3" width="60" height="15" uuid="7a925516-d920-4806-9f1c-344ff40ad431"/>
+				<textFieldExpression><![CDATA[$F{rfcsBrgPotongan}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.###;#,##0.###-">
+				<reportElement x="460" y="3" width="84" height="15" uuid="5792cbd5-d775-4212-aa5d-9e2b630c310a"/>
+				<textFieldExpression><![CDATA[$F{rfcsBrgTotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

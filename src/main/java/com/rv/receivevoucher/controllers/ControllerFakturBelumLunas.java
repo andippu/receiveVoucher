@@ -1,7 +1,5 @@
 package com.rv.receivevoucher.controllers;
 
-
-
 import com.rv.receivevoucher.models.FakturBelumLunas;
 import com.rv.receivevoucher.models.VFakturBelumLunas;
 import com.rv.receivevoucher.services.ServiceFakturBelumLunas;
