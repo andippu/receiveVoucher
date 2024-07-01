@@ -25,4 +25,9 @@ public class ServiceBiayaAnalisaMaster {
     public List<BiayaAnalisaMaster> getBiayaAnalisaBlmLunas(Integer status){
         return repoBiAnMst.findByBaLunas(status);
     }
+    
+    public String saveUpdateBiayaAnalisamaster( BiayaAnalisaMaster bam) {
+    	repoBiAnMst.save(bam);
+    	return "Submit Successfullty";
+    }
 }

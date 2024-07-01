@@ -12,7 +12,7 @@ import java.util.List;
 public interface IBiayaAnalisaMaster extends JpaRepository <BiayaAnalisaMaster,String> {
     List<BiayaAnalisaMaster> findByBaTipe(String baType);
 
-    @Query(value = "SELECT * FROM BIAYA_ANALISA_MASTER S WHERE TO_CHAR(S.BA_DATE,'Mon dd yyyy')=?1 AND S.TIPE=?2",nativeQuery = true)
+    @Query(value = "SELECT * FROM BIAYA_ANALISA_MASTER S WHERE TO_CHAR(S.BA_DATE,'Monyyyy')=?1 AND S.TIPE=?2 ORDER BY S.BA_DATE ",nativeQuery = true)
     List<BiayaAnalisaMaster> getBiAnMstDate(String dt, String tp);
     
    public BiayaAnalisaMaster findBybaFmNo(String fmNo);

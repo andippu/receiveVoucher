@@ -22,4 +22,9 @@ public class ServiceBiayaAnalisaDetail {
     public  BiayaAnalisaDetail getAnalisaDetailsingle(String fmNo, String fmName){
         return repoBiAnDtl.findByBadFmNoAndBadName(fmNo, fmName);
     }
+    
+    public String saveUpdateBiayaAnalisaDtl( BiayaAnalisaDetail bad) {
+    	repoBiAnDtl.save(bad);
+    	return "Submit Successfully";
+    }
 }

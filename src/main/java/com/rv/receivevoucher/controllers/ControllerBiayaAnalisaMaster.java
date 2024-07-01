@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-
+@CrossOrigin("http://localhost:4200")
 public class ControllerBiayaAnalisaMaster {
     @Autowired
     ServiceBiayaAnalisaMaster servBiAnMst;
@@ -33,5 +33,10 @@ public class ControllerBiayaAnalisaMaster {
     public List<BiayaAnalisaMaster> getBiayaAnalisaBlmLunas(){
     	Integer status=0;
         return servBiAnMst.getBiayaAnalisaBlmLunas(status);
+    }
+    
+    @PostMapping("/bianmst/addupdbiayanalisa")	
+    public String saveUpdateBiayaAnalisamaster(@RequestBody BiayaAnalisaMaster bam) {
+    	return servBiAnMst.saveUpdateBiayaAnalisamaster(bam);
     }
 }

@@ -21,4 +21,9 @@ public class ControllerBiayaAnalisaDetail {
     public  BiayaAnalisaDetail getAnalisaDetailsingle(String fmNo, String fmName){
         return servBiAnDtl.getAnalisaDetailsingle(fmNo, fmName);
     }
+    
+    @PostMapping("/biandtl/addupdbiayanalisadtl")	
+    public String saveUpdateBiayaAnalisaDtl(@RequestBody BiayaAnalisaDetail bad) {    	
+    	return servBiAnDtl.saveUpdateBiayaAnalisaDtl(bad);
+    }
 }

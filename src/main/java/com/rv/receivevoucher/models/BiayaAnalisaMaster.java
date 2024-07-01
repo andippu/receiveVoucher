@@ -1,11 +1,17 @@
 package com.rv.receivevoucher.models;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Data
 @NoArgsConstructor
@@ -18,9 +24,11 @@ public class BiayaAnalisaMaster {
     private String baFmNo;
 
     @Column(name="BA_DATE")
+    @JsonFormat(pattern="dd-MM-yyyy")
     private Date baDate;
 
     @Column(name="BA_TGL_TEMP")
+    @JsonFormat(pattern="dd-MM-yyyy")
     private Date baTgltemp;
 
     @Column(name="BA_NO_PAJAK",length=50)
@@ -46,5 +54,18 @@ public class BiayaAnalisaMaster {
 
     @Column(name="BA_UPDATED_DATE")
     private Date baUpdatedDate;
+    
+    @Column(name="BA_AMOUNT")
+    private BigDecimal baAmount;
+    
+    @Column(name="MATERAI")
+    private Integer baMaterai;
+    
+    @Column(name="PPH23")
+    private BigDecimal baPph23;
+    
+    @Column(name="PPN")
+    private BigDecimal baPpn;
+    
 
 }
