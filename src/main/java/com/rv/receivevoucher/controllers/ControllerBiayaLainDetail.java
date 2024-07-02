@@ -21,10 +21,15 @@ public class ControllerBiayaLainDetail {
 	        return servBild.getJualLainDetail(fmNo);
 	    }
 
-	    @GetMapping("/bilddtl/getbilddtlsingle")
-	    public  BiayaLainDetail getJualLainDetailsingle(BigDecimal bldno){
+	 @GetMapping("/bilddtl/getbilddtlsingle")
+	 public  BiayaLainDetail getJualLainDetailsingle(BigDecimal bldno){
 	        return servBild.getJualLainDetailsingle(bldno);
-	    }
+	 }
+	 
+	 @PostMapping("/bilddtl/addupdbelild")	
+	 public String saveUpdateBiayaAnalisamaster(@RequestBody BiayaLainDetail bld) {
+		 return servBild.saveUpdateBiayaAnalisamaster(bld);
+	  }
 	
 
 }

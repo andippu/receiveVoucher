@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.rv.receivevoucher.models.BiayaAnalisaDetail;
+import com.rv.receivevoucher.models.BiayaAnalisaMaster;
 import com.rv.receivevoucher.models.BiayaLainDetail;
 import com.rv.receivevoucher.repository.IBiayaLainDetailRepository;
 
@@ -21,8 +22,13 @@ public class ServiceBiayaLainDetail {
 	       return repoBild.findByBildFmNo(fmNo);
 	    }
 
-	    public  BiayaLainDetail getJualLainDetailsingle(BigDecimal bldno){
+	 public  BiayaLainDetail getJualLainDetailsingle(BigDecimal bldno){
 	        return repoBild.findByBildNo(bldno);
-	    }
+	 }
+	 
+	 public String saveUpdateBiayaAnalisamaster( BiayaLainDetail bld) {
+		 repoBild.save(bld);
+	    	return "Submit Successfullty";
+	  }
 
 }
