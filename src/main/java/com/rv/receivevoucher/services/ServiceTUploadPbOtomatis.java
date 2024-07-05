@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.ap.accountpayable.models.TUploadPembelian;
 import com.rv.receivevoucher.models.TClaimDiscount;
 import com.rv.receivevoucher.models.TUploadPbOtomatis;
 import com.rv.receivevoucher.repository.ITClaimDiscountRepository;
@@ -18,7 +19,27 @@ public class ServiceTUploadPbOtomatis {
 	@Autowired
 	ITUploadPbOtomatisRepository repoTupo;
 	
+	 public void checkTTupo() {
+	        List<TUploadPbOtomatis> tup = repoTupo.findAll(); // You can use findBy<YourField> if needed
+
+	        if (!tup.isEmpty()) {
+	        	repoTupo.deleteAll();
+	            System.out.println("Data deleted successfully");
+	        } else {
+	            System.out.println("No data found in the table");
+	        }
+	  }
+	
 	public List<TUploadPbOtomatis> getTupoList(){
 		return repoTupo.findAll();
+	}
+	
+	
+	
+	 public String insTUpPbOto (TUploadPbOtomatis data){
+		 repoTupo.save(data);
+		// String temp=reporitup.execuploadbeli();
+		System.out.println("temp :teUpload CSV Successmp");
+	       return "Upload CSV Success";
 	}
 }

@@ -18,5 +18,9 @@ public class TUploadPbOtomatisCompKey {
 	 private String tupoSpNo;  
 	 
 	 private String tupoProductId;  
+	 
+	 private String tupoBatchNo; 
+	 
+	 private String tupoUnitKecil; 
 
 }

@@ -18,42 +18,50 @@ import lombok.NoArgsConstructor;
 public class TUploadPbOtomatis {
 	
 	 @Id                                                  
-	 @Column(name="PB_NO",length=50,  nullable = false)  
+	 @Column(name="PB_NO",length=80,  nullable = false)  
 	 private String tupoPbNo;  
 	 
 	 @Id                                                  
-	 @Column(name="SP_NO",length=50,  nullable = false)  
+	 @Column(name="SP_NO",length=80,  nullable = false)  
 	 private String tupoSpNo;  
 	 
 	 @Id                                                  
-	 @Column(name="SPB_PRODUCTID",length=50,  nullable = false)  
+	 @Column(name="SPB_PRODUCTID",length=80,  nullable = false)  
 	 private String tupoProductId;  
 	 
-	 @Column(name="SPB_DATE",length=50)  
-	 private String tupoSpbDate;  
-	 
-	 @Column(name="SPB_CUSTID",length=50)  
-	 private String tupoSupId;  
-	 
-	 @Column(name="PO_NO",length=50)  
-	 private String tupoPoNo; 
-	 
-	 @Column(name="SPB_BATCHNO",length=50)  
+	 @Id
+	 @Column(name="SPB_BATCHNO",length=80)  
 	 private String tupoBatchNo; 
 	 
-	 @Column(name="UNIT_KECIL",length=50)  
+	 @Id
+	 @Column(name="UNIT_KECIL",length=80)  
 	 private String tupoUnitKecil; 
 	 
-	 @Column(name="SATUAN_KECIL",length=50)  
+	 @Column(name="SPB_DATE",length=80)  
+	 private String tupoSpbDate;  
+	 
+	 @Column(name="SPB_CUSTID",length=80)  
+	 private String tupoSupId;  
+	 
+	 @Column(name="PO_NO",length=80)  
+	 private String tupoPoNo; 
+	 
+	 @Column(name="SATUAN_KECIL",length=80)  
 	 private String tupoSatuanKecil; 
 	 
-	 @Column(name="STATUS",length=50)  
+	 @Column(name="STATUS",length=80)  
 	 private String tupoStatus; 
 	 
-	 @Column(name="DISC",length=50)  
+	 @Column(name="DISC",length=80)  
 	 private String tupoDiscount; 
 	 
-	 @Column(name="BONUS",length=50)  
+	 @Column(name="BONUS",length=80)  
 	 private String tupoBonus; 
+	 
+	 @Column(name="CUST_NAME",length=100)  
+	 private String tupoCustName; 
+	 
+	 @Column(name="ERROR",length=200)  
+	 private String tupoErrors; 
 	 
 }
