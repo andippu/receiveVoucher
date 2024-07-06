@@ -9,11 +9,15 @@ import com.rv.receivevoucher.models.TUploadPbOtomatis;
 import com.rv.receivevoucher.models.TUploadPbOtomatisCompKey;
 
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.query.Procedure;
 
 import java.util.List;
 
 @Repository
 @CrossOrigin("http://localhost:4200")
 public interface ITUploadPbOtomatisRepository  extends JpaRepository <TUploadPbOtomatis,TUploadPbOtomatisCompKey> {
+	public List<TUploadPbOtomatis> findByTupoPbNo(String pbno);
+	
+
 
 }

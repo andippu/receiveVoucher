@@ -31,8 +31,8 @@ public class ControllerTUploadPbOtomatis {
 	 }
 	
 	@GetMapping("/pboto/gettupolist")
-	public List<TUploadPbOtomatis> getTupoList(){
-		return servTupo.getTupoList();
+	public List<TUploadPbOtomatis> getTupoList(String pbno){
+		return servTupo.getTupoList(pbno);
 	}
 	
 	@PostMapping("/pboto/addtupoto")	  

@@ -39,6 +39,12 @@ public class VTUploadPbOtomatis {
 	 private String vtupoCustId;
 	 
 	 @Column(name="CUST_NAME", length=80)
-	 private String byrTahun;	
-
+	 private String vtupoCustName;	
+	 
+	 @Column(name="STATUS", length=80)
+	 private String vtupoStatus;
+	 
+	 @Column(name="ERROR", length=1000)
+	 private String vtupoError;	
+	 
 }

@@ -17,6 +17,7 @@ public class ServiceVTUploadPbOtomatis {
 	IVTUploadPbOtomatis repoVTUPO;
 	
 	public List<VTUploadPbOtomatis> getVTUPOList(){
+		String temp=repoVTUPO.execCheckUpload();
 		return repoVTUPO.findAll();
 	}
 

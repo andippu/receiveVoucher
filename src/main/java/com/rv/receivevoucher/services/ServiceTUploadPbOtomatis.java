@@ -30,8 +30,8 @@ public class ServiceTUploadPbOtomatis {
 	        }
 	  }
 	
-	public List<TUploadPbOtomatis> getTupoList(){
-		return repoTupo.findAll();
+	public List<TUploadPbOtomatis> getTupoList(String pbno){
+		return repoTupo.findByTupoPbNo(pbno);
 	}
 	
 	
