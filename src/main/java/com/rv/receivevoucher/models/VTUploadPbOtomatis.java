@@ -44,7 +44,7 @@ public class VTUploadPbOtomatis {
 	 @Column(name="STATUS", length=80)
 	 private String vtupoStatus;
 	 
-	 @Column(name="ERROR", length=1000)
+	 @Column(name="ERRMSG", length=1000)
 	 private String vtupoError;	
 	 
 }

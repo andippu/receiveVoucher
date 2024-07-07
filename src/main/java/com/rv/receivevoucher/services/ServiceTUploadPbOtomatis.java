@@ -33,11 +33,10 @@ public class ServiceTUploadPbOtomatis {
 	public List<TUploadPbOtomatis> getTupoList(String pbno){
 		return repoTupo.findByTupoPbNo(pbno);
 	}
-	
-	
-	
+		
 	 public String insTUpPbOto (TUploadPbOtomatis data){
 		 repoTupo.save(data);
+		 repoTupo.flush();
 		// String temp=reporitup.execuploadbeli();
 		System.out.println("temp :teUpload CSV Successmp");
 	       return "Upload CSV Success";

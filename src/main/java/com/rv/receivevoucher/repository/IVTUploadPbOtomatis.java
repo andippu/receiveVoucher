@@ -20,5 +20,8 @@ import java.util.List;
 public interface IVTUploadPbOtomatis extends JpaRepository<VTUploadPbOtomatis, VTUploadPbOtomatisCompKey>{
 	@Procedure(procedureName = "P_CHECK_PB_OTOMATIS")
 	public String execCheckUpload();
+	
+	@Procedure(procedureName = "INSERT_DATA")
+	public String execInsertUpload();
 
 }

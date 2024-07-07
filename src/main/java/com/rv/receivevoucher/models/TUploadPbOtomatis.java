@@ -61,7 +61,7 @@ public class TUploadPbOtomatis {
 	 @Column(name="CUST_NAME",length=100)  
 	 private String tupoCustName; 
 	 
-	 @Column(name="ERROR",length=1000)  
+	 @Column(name="ERRMSG",length=1000)  
 	 private String tupoErrors; 
 	 
 }

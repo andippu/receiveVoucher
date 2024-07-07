@@ -25,4 +25,9 @@ public class ControllerVTUploadPbOtomatis {
 	public List<VTUploadPbOtomatis> getVTUPOList(){
 		return servVTUPO.getVTUPOList();
 	}
+	
+	@GetMapping("/pboto/execinsertupload")
+	public String execInsertUpload() {
+		return servVTUPO.execInsertUpload();
+	}
 }

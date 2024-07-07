@@ -20,5 +20,9 @@ public class ServiceVTUploadPbOtomatis {
 		String temp=repoVTUPO.execCheckUpload();
 		return repoVTUPO.findAll();
 	}
+	
+	public String execInsertUpload() {
+		return repoVTUPO.execInsertUpload();
+	}
 
 }
