@@ -18,6 +18,9 @@ import java.util.List;
 public interface ITUploadPbOtomatisRepository  extends JpaRepository <TUploadPbOtomatis,TUploadPbOtomatisCompKey> {
 	public List<TUploadPbOtomatis> findByTupoPbNo(String pbno);
 	
-
+	@Procedure(procedureName = "P_CSV_SPB_OTO")
+	public String exeCsvPbOto();
+	
+	
 
 }

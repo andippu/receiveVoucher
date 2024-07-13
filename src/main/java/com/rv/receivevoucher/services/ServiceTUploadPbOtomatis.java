@@ -40,5 +40,11 @@ public class ServiceTUploadPbOtomatis {
 		// String temp=reporitup.execuploadbeli();
 		System.out.println("temp :teUpload CSV Successmp");
 	       return "Upload CSV Success";
-	}
+	 }
+	 
+	 public String exeCsvPbOto(){
+			return repoTupo.exeCsvPbOto();
+		}
+	 
+	 
 }

@@ -39,5 +39,10 @@ public class ControllerTUploadPbOtomatis {
 	 public String insTUpPbOto ( @RequestBody TUploadPbOtomatis data) throws IOException {	     
 	      return servTupo.insTUpPbOto(data);
 	  }
+	
+	@GetMapping("/pboto/execsvpboto")
+	public String exeCsvPbOto(){
+		return servTupo.exeCsvPbOto();
+	}
 
 }
