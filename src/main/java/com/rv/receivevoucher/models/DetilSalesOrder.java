@@ -20,10 +20,6 @@ public class DetilSalesOrder {
     private String dsoMsoNo;
 
     @Id
-    @Column(name="DSO_MSO_SEQ",length=50,  nullable = false)
-    private Integer dsoMsoSeq;
-
-    @Id
     @Column(name="DSO_BR_CODE",length=50,  nullable = false)
     private String dsoBrgCode;
 

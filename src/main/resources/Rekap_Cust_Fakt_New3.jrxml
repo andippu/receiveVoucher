@@ -13,6 +13,10 @@
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="inch"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="inch"/>
 	<parameter name="Period" class="java.lang.String"/>
+	<parameter name="custcode" class="java.lang.String"/>
+	<parameter name="tdkmaterai1" class="java.lang.String"/>
+	<parameter name="tdkmaterai2" class="java.lang.String"/>
+	<parameter name="tdkmaterai3" class="java.lang.String"/>
 	<field name="rrcfFmNo" class="java.lang.String"/>
 	<field name="rrcfCusCode" class="java.lang.String"/>
 	<field name="rrcfCusName" class="java.lang.String"/>	
@@ -76,13 +80,15 @@
 	<variable name="tosel_report" class="java.math.BigDecimal" calculation="Sum">
 		<variableExpression><![CDATA[$F{rrcfTotSel}]]></variableExpression>
 	</variable>
+	<variable name="Vmaterai" class="java.math.BigDecimal"/>
+	<variable name="VTotSel" class="java.math.BigDecimal"/>
 	<group name="CUS_CODE">
 		<groupExpression><![CDATA[$F{rrcfCusCode}]]></groupExpression>
 	</group>
 	<group name="CUS_NAME">
 		<groupExpression><![CDATA[$F{rrcfCusName}]]></groupExpression>
 	</group>
-	<group name="GroupCust">
+	<group name="GroupCust" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[$F{rrcfCusName}]]></groupExpression>
 		<groupHeader>
 			<band height="43">
@@ -94,7 +100,7 @@
 					<textFieldExpression><![CDATA[$F{rrcfCusName}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="2" y="0" width="100" height="20" uuid="2d8cc004-7cfb-48b3-9775-0c53ba4476d9"/>
+					<reportElement x="1" y="0" width="100" height="20" uuid="2d8cc004-7cfb-48b3-9775-0c53ba4476d9"/>
 					<textElement>
 						<font size="12"/>
 					</textElement>
@@ -334,14 +340,10 @@
 	<background>
 		<band splitType="Stretch"/>
 	</background>
-	<title>
-		<band height="111" splitType="Stretch">
+	<pageHeader>
+		<band height="97">
 			<staticText>
-				<reportElement x="6" y="0" width="100" height="20" uuid="b97e8055-2a2c-41e6-854b-15ce638f5594"/>
-				<text><![CDATA[PT LAPI Laboratories]]></text>
-			</staticText>
-			<staticText>
-				<reportElement x="386" y="0" width="186" height="90" uuid="4e0d925d-2b3e-4efa-943a-2c025d2b488e"/>
+				<reportElement x="420" y="3" width="230" height="68" uuid="4e0d925d-2b3e-4efa-943a-2c025d2b488e"/>
 				<textElement textAlignment="Center">
 					<font size="14"/>
 				</textElement>
@@ -350,23 +352,27 @@ per
 Nama dan No Faktur]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="6" y="70" width="50" height="30" uuid="f5c94004-7a50-40b3-b3c6-197bcfc8a789"/>
-				<text><![CDATA[Periode : ]]></text>
+				<reportElement isPrintRepeatedValues="false" x="2" y="0" width="100" height="20" uuid="b97e8055-2a2c-41e6-854b-15ce638f5594"/>
+				<text><![CDATA[PT LAPI Laboratories]]></text>
 			</staticText>
+			<textField>
+				<reportElement x="50" y="73" width="100" height="18" uuid="67e19bc8-14e1-46a5-8859-37c01a580bea"/>
+				<textFieldExpression><![CDATA[$P{Period}]]></textFieldExpression>
+			</textField>
 			<staticText>
-				<reportElement x="826" y="56" width="50" height="30" uuid="70648be1-3608-4603-a419-0d57f4aeac08"/>
+				<reportElement x="790" y="71" width="50" height="23" uuid="70648be1-3608-4603-a419-0d57f4aeac08"/>
 				<text><![CDATA[Tgl Cetak :]]></text>
 			</staticText>
 			<textField pattern="MMM d, yyyy h:mm:ss a">
-				<reportElement x="876" y="55" width="120" height="30" uuid="f37ae193-3187-45b0-8257-007e309915ea"/>
+				<reportElement x="844" y="71" width="120" height="22" uuid="f37ae193-3187-45b0-8257-007e309915ea"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
-			<textField>
-				<reportElement x="56" y="70" width="100" height="30" uuid="67e19bc8-14e1-46a5-8859-37c01a580bea"/>
-				<textFieldExpression><![CDATA[$P{Period}]]></textFieldExpression>
-			</textField>
+			<staticText>
+				<reportElement x="0" y="73" width="50" height="20" uuid="f5c94004-7a50-40b3-b3c6-197bcfc8a789"/>
+				<text><![CDATA[Periode : ]]></text>
+			</staticText>
 		</band>
-	</title>
+	</pageHeader>
 	<detail>
 		<band height="20" splitType="Stretch">
 			<textField pattern="dd/MM/yyyy">
@@ -540,7 +546,7 @@ Nama dan No Faktur]]></text>
 		</band>
 	</detail>
 	<summary>
-		<band height="30" splitType="Stretch">
+		<band height="43" splitType="Stretch">
 			<textField pattern="#,##0.00">
 				<reportElement x="313" y="5" width="88" height="20" uuid="e525f83f-8338-422a-92b9-9eeeb4674def"/>
 				<textElement textAlignment="Right">

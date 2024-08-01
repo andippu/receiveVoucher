@@ -12,7 +12,6 @@ import java.io.Serializable;
 @Data
 public class DetilSalesOrderCompKey implements Serializable {
     private String dsoMsoNo;
-    private Integer dsoMsoSeq;
 
     private String dsoBrgCode;
 

@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 @Repository
 @CrossOrigin("http://localhost:4200")
-public interface IMasterSalesOrderRepository extends JpaRepository<MasterSalesOrder, MasterSalesOrderCompKey> {
+public interface IMasterSalesOrderRepository extends JpaRepository<MasterSalesOrder, String> {
 
-    @Query("select s from MasterSalesOrder s where s.msoNo=?1 and s.msoSeq=?2")
+    @Query("select s from MasterSalesOrder s where s.msoNo=?1")
     MasterSalesOrder getbylist(Integer s1, Integer S2);
 
 }

@@ -12,7 +12,6 @@ import java.util.Date;
 @Data
 public class MasterSalesOrderCompKey implements Serializable {
     private String msoNo;
-    private Integer msoSeq;
 
 
 }

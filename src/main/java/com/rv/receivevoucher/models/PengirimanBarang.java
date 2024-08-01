@@ -24,8 +24,6 @@ public class PengirimanBarang {
     @Column(name="PB_MSO_NO",length=40)
     private String pbMsoNo;
 
-    @Column(name="PB_MSO_SEQ")
-    private Integer pbMsoSeq;
 
     @Column(name="PB_DATE")
     private Date pbDate;

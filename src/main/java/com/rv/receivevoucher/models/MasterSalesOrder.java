@@ -12,15 +12,12 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "MASTER_SALES_ORDER")
-@IdClass(MasterSalesOrderCompKey.class)
+//@IdClass(MasterSalesOrderCompKey.class)
 public class MasterSalesOrder {
     @Id
     @Column(name="MSO_NO",length=50,  nullable = false)
     private String msoNo;
 
-    @Id
-    @Column(name="MSO_SEQ")
-    private Integer msoSeq;
 
     @Column (name="MSO_DATE" , nullable = false)
     private Date msoDate;
