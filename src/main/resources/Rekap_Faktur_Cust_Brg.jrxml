@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.1.final using JasperReports Library version 6.21.0-4f56c4f36cd19e17675219a9ac4692d5f0f13b06  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="FAKTUR_CUST_BRG" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0e8af58f-f704-4014-ac61-d28ec4dd88ff">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="RV_DB"/>
+	<parameter name="period" class="java.lang.String">
+		<parameterDescription><![CDATA[period]]></parameterDescription>
+	</parameter>
+	<field name="rfcbCusCode" class="java.lang.String"/>
+	<field name="rrcbCusName" class="java.lang.String"/>
+	<field name="rrcbBrName" class="java.lang.String"/>
+	<field name="rrcbHrgPk" class="java.math.BigDecimal"/>
+	<field name="rrcbHrgPot" class="java.math.BigDecimal"/>
+	<field name="rrcbHrgTot1" class="java.math.BigDecimal"/>
+	<field name="rrcbHrgTot2" class="java.math.BigDecimal"/>
+	<field name="rrcbPeriode" class="java.lang.String"/>
+	<field name="rrcbPpn" class="java.math.BigDecimal"/>
+	<field name="rrcbUnit" class="java.math.BigDecimal"/>
+	<field name="rrcbFlagBpjs" class="java.lang.String"/>
+	<variable name="SubTotal" class="java.math.BigDecimal" resetType="Group" resetGroup="Distributor" calculation="Sum">
+		<variableExpression><![CDATA[$F{rrcbHrgTot1}]]></variableExpression>
+	</variable>
+	<variable name="VPageTotal" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{rrcbHrgTot1}]]></variableExpression>
+	</variable>
+	<group name="Distributor">
+		<groupExpression><![CDATA[$F{rrcbCusName}]]></groupExpression>
+		<groupHeader>
+			<band height="42">
+				<staticText>
+					<reportElement x="0" y="2" width="63" height="16" uuid="3af4f12e-7a61-4da6-ab33-0b55d2df4044"/>
+					<text><![CDATA[Distributor  :  ]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="70" y="2" width="230" height="17" uuid="ed2f46d4-4913-4abf-a556-cdece5ee4d12"/>
+					<textFieldExpression><![CDATA[$F{rrcbCusName}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="22" width="297" height="16" uuid="b17cf10c-f910-4d6b-9baf-8bc4f19f440c"/>
+					<text><![CDATA[Nama Barang]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="282" y="22" width="56" height="16" uuid="c4774a10-ecea-418c-a39c-4e7bf1534354"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Unit]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="344" y="22" width="100" height="16" uuid="d73fe9aa-a80c-4c7c-a2c8-e9b226fae67d"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[HNA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="448" y="22" width="106" height="16" uuid="22631dba-2a0a-4086-be5d-62d22db3a95c"/>
+					<textElement textAlignment="Center"/>
+					<text><![CDATA[Total Penjualan]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="41" width="570" height="1" uuid="96c74a98-a7fc-47bd-ac86-fe25a7f327cb"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="27">
+				<textField pattern="#,##0.00">
+					<reportElement x="454" y="6" width="100" height="20" uuid="bb02f4da-7c75-4e78-bbf3-36d73304ddaa"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$V{SubTotal}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="0" y="2" width="553" height="1" uuid="d5e0ed73-8e0e-46cc-abc6-e257fb738095"/>
+				</line>
+				<staticText>
+					<reportElement x="397" y="6" width="56" height="20" uuid="60232824-c2d6-4bcf-b2e2-c73260ce49ee"/>
+					<text><![CDATA[Sub Total :]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="644e4774-679d-4d79-97ab-0bcf0fc42dfd"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[PT. LAPI Laboratories]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="0" width="220" height="40" uuid="6c95d1c6-62f3-4feb-a9d2-4820f82c63f7"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Rekapitulasi Penjualan Per Pelanggan dan Produk]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="53" height="14" uuid="b1a43e3b-12b4-4704-a1c8-3f7d24aee3c0"/>
+				<text><![CDATA[Periode :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="50" y="40" width="100" height="20" uuid="c3776df0-5fb6-464f-83fb-a7262acd0fb7"/>
+				<textFieldExpression><![CDATA[$P{period}]]></textFieldExpression>
+			</textField>
+			<textField pattern="MMM d, yyyy h:mm:ss a">
+				<reportElement x="433" y="40" width="120" height="22" uuid="1b70d1f9-2727-41c3-a886-8bdba0f065f7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="379" y="40" width="50" height="23" uuid="7488deac-c375-46fd-aedf-36224be1e67b"/>
+				<text><![CDATA[Tgl Cetak :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="280" height="20" uuid="6b6d53c1-57eb-41c2-81d6-9068f47ab56b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rrcbBrName}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="281" y="0" width="56" height="20" uuid="65b0c41e-c140-4445-8ded-01a78d459346"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rrcbUnit}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement x="342" y="0" width="102" height="20" uuid="5de5ae67-f7f3-496d-831f-b94f7dd6dc9f"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rrcbHrgPk}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00" isBlankWhenNull="false">
+				<reportElement x="448" y="0" width="106" height="20" uuid="8e31138b-3d8f-46ec-97c6-0d1f78c17245"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rrcbHrgTot1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="25" splitType="Stretch">
+			<textField pattern="#,##0.00">
+				<reportElement x="454" y="3" width="100" height="20" uuid="cece4fb2-b900-439e-a91c-0e8273e31820"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{VPageTotal}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="397" y="3" width="56" height="19" uuid="2793debd-6212-40e1-b4ae-6beb8aab5a0c"/>
+				<text><![CDATA[Total  :]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

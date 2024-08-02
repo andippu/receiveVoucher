@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.rv.receivevoucher.models.ReportFakturCash;
 import com.rv.receivevoucher.reports.ServiceReportRekapCusfaktNew3BP;
 import com.rv.receivevoucher.reports.ServiceReportRekapCusfaktNew3OC;
+import com.rv.receivevoucher.reports.ServiceReportRekapCustBrg;
 import com.rv.receivevoucher.reports.ServiceReportRekapCustFaktNew3;
 import com.rv.receivevoucher.reports.ServiceReportRekapFakturNew2;
 import com.rv.receivevoucher.reports.ServiceReportRekapFakturtNew5;
@@ -39,6 +40,8 @@ class ControllerReports {
 	private ServiceReportRekapCusfaktNew3OC servRRCFN3OC;	
 	@Autowired
 	private ServiceReportRekapCusfaktNew3BP servRRCFN3BP;
+	@Autowired
+	private ServiceReportRekapCustBrg servRRCB;
 	
 	
 	 @GetMapping("/pdf/reportrekapcustfaktnew3")
@@ -98,6 +101,18 @@ class ControllerReports {
 	       String headerValue = "attachment; filename=Rekapitulasi By No Faktur " + currentDateTime + ".pdf";
 	       response.setHeader(headerKey, headerValue);
 	       servRRFN2.ReportRekapFaktNew2(period, response);
+	     //  return "Report Has bee Download";
+	 }
+	 
+	 @GetMapping("/pdf/reportrekapfaktcustbrg")
+	 public void RRCBcreatePDF(String period, String cuscode, HttpServletResponse response) throws IOException, JRException {
+	       response.setContentType("application/pdf");
+	       DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd:hh:mm:ss");
+	       String currentDateTime = dateFormatter.format(new Date());
+	       String headerKey = "Content-Disposition";
+	       String headerValue = "attachment; filename=Rekapitulasi By Barang " + currentDateTime + ".pdf";
+	       response.setHeader(headerKey, headerValue);
+	       servRRCB.tJaRepReportRekapCustBrg(period, cuscode, response);
 	     //  return "Report Has bee Download";
 	    }
 
