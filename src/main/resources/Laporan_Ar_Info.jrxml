@@ -6,80 +6,26 @@
 	<queryString language="SQL">
 		<![CDATA[SELECT * FROM RPT_AR_INFO]]>
 	</queryString>
-	<field name="RARIN_FMNO" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_FMNO"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_FMNO"/>
-	</field>
-	<field name="RARIN_SPB_NO" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_SPB_NO"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_SPB_NO"/>
-	</field>
-	<field name="RARIN_MSONO" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_MSONO"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_MSONO"/>
-	</field>
-	<field name="RARIN_JTTEMPO" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_JTTEMPO"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_JTTEMPO"/>
-	</field>
-	<field name="RARIN_LUNAS" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_LUNAS"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_LUNAS"/>
-	</field>
-	<field name="RARIN_FMDATE" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_FMDATE"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_FMDATE"/>
-	</field>
-	<field name="RARIN_CUS" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_CUS"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_CUS"/>
-	</field>
-	<field name="RARIN_DUEDATE" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_DUEDATE"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_DUEDATE"/>
-	</field>
-	<field name="RARIN_VOUCHER" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_VOUCHER"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_VOUCHER"/>
-	</field>
-	<field name="RARIN_AMOUNT" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_AMOUNT"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_AMOUNT"/>
-	</field>
-	<field name="RARIN_DATE" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_DATE"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_DATE"/>
-	</field>
-	<field name="RARIN_ADMIN" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_ADMIN"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_ADMIN"/>
-	</field>
-	<field name="RARIN_PPH23" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_PPH23"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_PPH23"/>
-	</field>
-	<field name="RARIN_ONGKIR" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_ONGKIR"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_ONGKIR"/>
-	</field>
-	<field name="RARIN_PROV" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_PROV"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_PROV"/>
-	</field>
-	<field name="RARIN_MATERAI" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_MATERAI"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_MATERAI"/>
-	</field>
-	<field name="RARIN_PPH22" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_PPH22"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_PPH22"/>
-	</field>
-	<field name="RARIN_TOTAL" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RARIN_TOTAL"/>
-		<property name="com.jaspersoft.studio.field.label" value="RARIN_TOTAL"/>
-	</field>
+	<field name="rarinFmNo" class="java.lang.String"/>
+	<field name="rarinSpbNo" class="java.lang.String"/>
+	<field name="rarinMsoNo" class="java.lang.String"/>
+	<field name="rarinJTempo" class="java.lang.String"/>
+	<field name="rarinLunas" class="java.lang.String"/>
+	<field name="rarinFmDate" class="java.lang.String"/>
+	<field name="rarinCustName" class="java.lang.String"/>
+	<field name="rarinDueDate" class="java.math.BigDecimal"/>
+	<field name="rarinVoucher" class="java.lang.String"/>
+	<field name="rarinAmount" class="java.math.BigDecimal"/>
+	<field name="rarinDate" class="java.lang.String"/>
+	<field name="rarinAdmin" class="java.math.BigDecimal"/>
+	<field name="rarinpph23" class="java.math.BigDecimal"/>
+	<field name="rarinOngkir" class="java.math.BigDecimal"/>
+	<field name="rarinProv" class="java.math.BigDecimal"/>
+	<field name="rarinMaterai" class="java.math.BigDecimal"/>
+	<field name="rarinPph22" class="java.math.BigDecimal"/>
+	<field name="rarintotal" class="java.math.BigDecimal"/>
 	<group name="Group_Faktur" isReprintHeaderOnEachPage="true">
-		<groupExpression><![CDATA[$F{RARIN_FMDATE}]]></groupExpression>
+		<groupExpression><![CDATA[$F{rarinFmDate}]]></groupExpression>
 		<groupHeader>
 			<band height="106">
 				<textField>
@@ -87,7 +33,7 @@
 					<textElement verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{RARIN_CUS}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{rarinCustName}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="0" y="3" width="62" height="16" uuid="046470dd-73f3-426b-9bd4-25451298f32c"/>
@@ -101,7 +47,7 @@
 					<textElement verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{RARIN_FMNO}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{rarinFmNo}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="0" y="23" width="60" height="12" uuid="b7588ddd-a296-4ac7-b7bd-effea9ccb7c2"/>
@@ -122,7 +68,7 @@
 					<textElement verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{RARIN_SPB_NO}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{rarinSpbNo}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="1" y="55" width="58" height="14" uuid="e4bf02f7-94d7-40d3-bd36-3b9d531ec830"/>
@@ -136,7 +82,7 @@
 					<textElement verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{RARIN_JTTEMPO}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{rarinJTempo}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="541" y="23" width="70" height="14" uuid="e0b84dd7-a596-44e4-9a90-60c8a7852a23"/>
@@ -164,21 +110,21 @@
 					<textElement verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{RARIN_FMDATE}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{rarinFmDate}]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="615" y="40" width="84" height="14" uuid="dee4d56a-87e9-45d8-b518-365ea876b61c"/>
 					<textElement verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{RARIN_MSONO}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{rarinMsoNo}]]></textFieldExpression>
 				</textField>
 				<textField>
 					<reportElement x="615" y="55" width="76" height="14" uuid="8ee61525-0a45-425b-bbdf-f93dc853404f"/>
 					<textElement verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{RARIN_DUEDATE}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{rarinDueDate}]]></textFieldExpression>
 				</textField>
 				<line>
 					<reportElement x="1" y="72" width="778" height="1" uuid="0786283f-6d67-469b-8740-d2b02f37e94b"/>
@@ -348,70 +294,70 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RARIN_VOUCHER}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rarinVoucher}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="90" y="0" width="60" height="14" uuid="ccaecb04-49dd-4b33-bf09-4435c59feab3"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RARIN_DATE}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rarinDate}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="150" y="0" width="90" height="14" uuid="d4b517e4-0764-4592-8d39-2d006300960c"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RARIN_AMOUNT}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rarinAmount}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="240" y="0" width="70" height="14" uuid="33795687-5a28-4161-8065-b2a2942d17af"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RARIN_ADMIN}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rarinAdmin}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="310" y="0" width="70" height="14" uuid="961249de-3e9f-4bee-9e8e-b1d340954e97"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RARIN_PROV}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rarinProv}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="380" y="0" width="80" height="14" uuid="c411a5b1-f149-459d-bbf2-500ca7aeb82e"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RARIN_MATERAI}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rarinMaterai}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="460" y="0" width="81" height="14" uuid="0324df2b-a1fc-4f8c-accb-288d8f4ed52a"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RARIN_ONGKIR}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rarinOngkir}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="540" y="0" width="75" height="14" uuid="2ac690de-c776-4ca2-91cd-a8413524954b"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RARIN_PPH23}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rarinpph23}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="615" y="0" width="76" height="14" uuid="f90e6ca6-2d22-43dc-8f05-34e3f242ac8d"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RARIN_PPH22}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rarinPph22}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="38" y="20" width="109" height="12" uuid="c2d0ad4e-9272-4f6e-9645-8186bb626319"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="9"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RARIN_TOTAL}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rarintotal}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="20" width="40" height="12" uuid="2606f64e-cb3e-4baa-b0a0-9991ecef1700"/>

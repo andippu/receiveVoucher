@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rv.receivevoucher.models.ReportFakturCash;
+import com.rv.receivevoucher.models.ReportLapBonus;
+import com.rv.receivevoucher.reports.ServiceReportArInfo;
+import com.rv.receivevoucher.reports.ServiceReportLapBonus;
 import com.rv.receivevoucher.reports.ServiceReportRekapCusfaktNew3BP;
 import com.rv.receivevoucher.reports.ServiceReportRekapCusfaktNew3OC;
 import com.rv.receivevoucher.reports.ServiceReportRekapCustBrg;
@@ -48,6 +51,10 @@ class ControllerReports {
 	private ServiceReportRekapFakturtNew2Ba servRRFNBA;
 	@Autowired
 	ServiceReportRekapFakturtNew2Pj servRRFNPJ;
+	@Autowired
+	private ServiceReportLapBonus servLapBonus;
+	@Autowired
+	ServiceReportArInfo servArInfo;
 	
 	
 	 @GetMapping("/pdf/reportrekapcustfaktnew3")
@@ -145,5 +152,34 @@ class ControllerReports {
 	       servRRFNPJ.ReportRekapFaktNew2(period, response);
 	     //  return "Report Has bee Download";
 	 }
+	 
+	 @GetMapping("/pdf/reportarinfo")
+	 public void ArInfocreatePDF( String fmno,HttpServletResponse response) throws IOException, JRException {
+	       response.setContentType("application/pdf");
+	       DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd:hh:mm:ss");
+	       String currentDateTime = dateFormatter.format(new Date());
+	       String headerKey = "Content-Disposition";
+	       String headerValue = "attachment; filename=AR Info " + currentDateTime + ".pdf";
+	       response.setHeader(headerKey, headerValue);
+	       servArInfo.tJaReportLapArInfo(fmno, response);
+	     //  return "Report Has bee Download";
+	 }
+	 
+	 @GetMapping("/pdf/reportlapbonus")
+	 public void LapBonuscreatePDF(String pbulan, HttpServletResponse response) throws IOException, JRException {
+	       response.setContentType("application/pdf");
+	       DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd:hh:mm:ss");
+	       String currentDateTime = dateFormatter.format(new Date());
+	       String headerKey = "Content-Disposition";
+	       String headerValue = "attachment; filename=Laporan Bonus  " + currentDateTime + ".pdf";
+	       response.setHeader(headerKey, headerValue);
+	       servLapBonus.tJaReportLapBonus(pbulan, response);
+	     //  return "Report Has bee Download";
+	 }
+	 
+	 @GetMapping("/pdf/reportlapbonusall")
+	 public List<ReportLapBonus> getallList(){
+			return servLapBonus.getallList();
+		}
 
 }

@@ -4,60 +4,34 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="RV_DB"/>
 	<parameter name="pbulan" class="java.lang.String"/>
-	<field name="RLBO_FMNO" class="java.lang.String"/>
-	<field name="RLBO_NOPJK" class="java.lang.String"/>
-	<field name="RLBO_CUSCODE" class="java.lang.String"/>
-	<field name="RLBO_CUSNAME" class="java.lang.String"/>
-	<field name="RLBO_BRNAME" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="RLBO_BRNAME"/>
-		<property name="com.jaspersoft.studio.field.label" value="RLBO_BRNAME"/>
-	</field>
-	<field name="BLBO_BATCHNO" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="BLBO_BATCHNO"/>
-		<property name="com.jaspersoft.studio.field.label" value="BLBO_BATCHNO"/>
-	</field>
-	<field name="BLBO_PERIOD" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.name" value="BLBO_PERIOD"/>
-		<property name="com.jaspersoft.studio.field.label" value="BLBO_PERIOD"/>
-	</field>
-	<field name="RLBO_QTY" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RLBO_QTY"/>
-		<property name="com.jaspersoft.studio.field.label" value="RLBO_QTY"/>
-	</field>
-	<field name="RLBO_HRGPK" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RLBO_HRGPK"/>
-		<property name="com.jaspersoft.studio.field.label" value="RLBO_HRGPK"/>
-	</field>
-	<field name="RLBO_HRG" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RLBO_HRG"/>
-		<property name="com.jaspersoft.studio.field.label" value="RLBO_HRG"/>
-	</field>
-	<field name="RLBO_HJP" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RLBO_HJP"/>
-		<property name="com.jaspersoft.studio.field.label" value="RLBO_HJP"/>
-	</field>
-	<field name="RLBO_HNA" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RLBO_HNA"/>
-		<property name="com.jaspersoft.studio.field.label" value="RLBO_HNA"/>
-	</field>
-	<field name="RLBO_PPN" class="java.math.BigDecimal">
-		<property name="com.jaspersoft.studio.field.name" value="RLBO_PPN"/>
-		<property name="com.jaspersoft.studio.field.label" value="RLBO_PPN"/>
-	</field>
+	<field name="rlboFmNo" class="java.lang.String"/>
+	<field name="rlboNoPajak" class="java.lang.String"/>
+	<field name="rlboCusCode" class="java.lang.String"/>
+	<field name="rlboCusName" class="java.lang.String"/>
+	<field name="rlboBrName" class="java.lang.String"/>
+	<field name="rlboBatchNo" class="java.lang.String"/>
+	<field name="rlboPeriod" class="java.lang.String"/>
+	<field name="rlboQty" class="java.math.BigDecimal"/>
+	<field name="rlboHargaPk" class="java.math.BigDecimal"/>
+	<field name="rlboHarga" class="java.math.BigDecimal"/>
+	<field name="rlboHjp" class="java.math.BigDecimal"/>
+	<field name="rlboHna" class="java.math.BigDecimal"/>
+	<field name="rlboPpn" class="java.math.BigDecimal"/>
+	<field name="rlboBrCode" class="java.lang.String"/>
 	<variable name="SubHna" class="java.math.BigDecimal" resetType="Group" resetGroup="Group_Product" calculation="Sum">
-		<variableExpression><![CDATA[$F{RLBO_HNA}]]></variableExpression>
+		<variableExpression><![CDATA[$F{rlboHna}]]></variableExpression>
 	</variable>
 	<variable name="SubPpn" class="java.math.BigDecimal" resetType="Group" resetGroup="Group_Product" calculation="Sum">
-		<variableExpression><![CDATA[$F{RLBO_PPN}]]></variableExpression>
+		<variableExpression><![CDATA[$F{rlboPpn}]]></variableExpression>
 	</variable>
 	<variable name="ReportHna" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{RLBO_HNA}]]></variableExpression>
+		<variableExpression><![CDATA[$F{rlboHna}]]></variableExpression>
 	</variable>
 	<variable name="ReportPpn" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{RLBO_PPN}]]></variableExpression>
+		<variableExpression><![CDATA[$F{rlboPpn}]]></variableExpression>
 	</variable>
 	<group name="Group_Product">
-		<groupExpression><![CDATA[$F{RLBO_BRNAME}]]></groupExpression>
+		<groupExpression><![CDATA[$F{rlboBrName}]]></groupExpression>
 		<groupHeader>
 			<band height="41">
 				<staticText>
@@ -66,7 +40,7 @@
 				</staticText>
 				<textField>
 					<reportElement x="80" y="3" width="370" height="20" uuid="a2992bc8-41b2-43e0-a1f0-92fd26b6be1e"/>
-					<textFieldExpression><![CDATA[$F{RLBO_BRNAME}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{rlboBrName}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="0" y="23" width="204" height="18" uuid="48338b5d-d62f-464b-8157-c53e3db639cf"/>
@@ -246,7 +220,7 @@
 				<textElement verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RLBO_CUSNAME}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rlboCusName}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="204" y="0" width="101" height="20" uuid="91837675-8115-4406-a250-5352438fb094"/>
@@ -259,7 +233,7 @@
 				<textElement verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RLBO_FMNO}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rlboFmNo}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="305" y="0" width="100" height="20" uuid="b40e889e-479e-460f-b98b-eefadf043f14"/>
@@ -272,7 +246,7 @@
 				<textElement verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RLBO_NOPJK}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rlboNoPajak}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="405" y="0" width="55" height="20" uuid="a270fcea-b134-4a12-9d58-69ce36e83ffe"/>
@@ -285,7 +259,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RLBO_QTY}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rlboQty}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="460" y="0" width="60" height="20" uuid="4f4dec6a-8347-4a33-b4d8-0f466ba96be1"/>
@@ -298,7 +272,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{BLBO_BATCHNO}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rlboBatchNo}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="520" y="0" width="80" height="20" uuid="8374e90c-87ae-4cf1-891e-d24875d4aba7"/>
@@ -311,7 +285,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RLBO_HJP}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rlboHjp}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="600" y="0" width="100" height="20" uuid="6aec138b-9e75-46eb-958e-b90a393fc63a"/>
@@ -324,7 +298,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RLBO_HNA}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rlboHna}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="700" y="0" width="80" height="20" uuid="0055fadb-2091-44f7-b617-335b8f780b62"/>
@@ -337,7 +311,7 @@
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RLBO_PPN}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rlboPpn}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>

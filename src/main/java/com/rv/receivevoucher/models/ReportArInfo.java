@@ -43,7 +43,7 @@ public class ReportArInfo {
 	 private String rarinCustName;
 	
 	@Column(name="RARIN_DUEDATE")
-	 private Integer rarinDueDate;
+	 private BigDecimal rarinDueDate;
 	
 	@Column(name="RARIN_VOUCHER",length=14)
 	 private String rarinVoucher;
