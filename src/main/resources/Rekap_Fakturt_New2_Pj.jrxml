@@ -13,30 +13,30 @@
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="inch"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="inch"/>
 	<parameter name="period" class="java.lang.String"/>
-	<field name="RRFNPJ_CUSCODE" class="java.lang.String"/>
-	<field name="RRFNPJ_CUSNAME" class="java.lang.String"/>
-	<field name="RRFNPJ_FMNO" class="java.lang.String"/>
-	<field name="RRFNPJ_DATE" class="java.lang.String"/>
-	<field name="RRFNPJ_PERIOD" class="java.lang.String"/>
-	<field name="RRFNPJ_HNA" class="java.math.BigDecimal"/>
-	<field name="RRFNPJ_POT" class="java.math.BigDecimal"/>
-	<field name="RRFNPJ_HNA2" class="java.math.BigDecimal"/>
-	<field name="RRFNPJ_PPN" class="java.math.BigDecimal"/>
-	<field name="RRFNPJ_TOTAL" class="java.math.BigDecimal"/>
+	<field name="rrfnPjCusCode" class="java.lang.String"/>
+	<field name="rrfnPjCusName" class="java.lang.String"/>
+	<field name="rrfnPjFmNo" class="java.lang.String"/>
+	<field name="rrfnPjDate" class="java.lang.String"/>
+	<field name="rrfnPjPeriod" class="java.lang.String"/>
+	<field name="rrfnPjHna" class="java.math.BigDecimal"/>
+	<field name="rrfnPjPot" class="java.math.BigDecimal"/>
+	<field name="rrfnPjHna2" class="java.math.BigDecimal"/>
+	<field name="rrfnPjPpn" class="java.math.BigDecimal"/>
+	<field name="rrfnPjTotal" class="java.math.BigDecimal"/>
 	<variable name="hna2_report" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{RRFNPJ_HNA2}]]></variableExpression>
+		<variableExpression><![CDATA[$F{rrfnPjHna2}]]></variableExpression>
 	</variable>
 	<variable name="ppn_report" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{RRFNPJ_PPN}]]></variableExpression>
+		<variableExpression><![CDATA[$F{rrfnPjPpn}]]></variableExpression>
 	</variable>
 	<variable name="tosel_report" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{RRFNPJ_TOTAL}]]></variableExpression>
+		<variableExpression><![CDATA[$F{rrfnPjTotal}]]></variableExpression>
 	</variable>
 	<variable name="hna_report" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{RRFNPJ_HNA}]]></variableExpression>
+		<variableExpression><![CDATA[$F{rrfnPjHna}]]></variableExpression>
 	</variable>
 	<variable name="pot_report" class="java.math.BigDecimal" calculation="Sum">
-		<variableExpression><![CDATA[$F{RRFNPJ_POT}]]></variableExpression>
+		<variableExpression><![CDATA[$F{rrfnPjPot}]]></variableExpression>
 	</variable>
 	<background>
 		<band splitType="Stretch"/>
@@ -227,7 +227,7 @@ per No Faktur]]></text>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RRFNPJ_TOTAL}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rrfnPjTotal}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="740" y="0" width="75" height="20" uuid="61f74f59-b826-4a00-b3b0-0dd8a4785873"/>
@@ -241,7 +241,7 @@ per No Faktur]]></text>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RRFNPJ_PPN}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rrfnPjPpn}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="652" y="0" width="88" height="20" uuid="06f5d6e7-10d5-4af7-a7b8-153d31b63947"/>
@@ -255,7 +255,7 @@ per No Faktur]]></text>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RRFNPJ_HNA2}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rrfnPjHna2}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="564" y="0" width="88" height="20" uuid="ccc3e840-ac93-473e-bfb8-8af35109f5de"/>
@@ -269,7 +269,7 @@ per No Faktur]]></text>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RRFNPJ_POT}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rrfnPjPot}]]></textFieldExpression>
 			</textField>
 			<textField pattern="#,##0.00">
 				<reportElement x="476" y="0" width="88" height="20" uuid="ea0976e1-05c4-4ad3-ba38-09eee5757e4d"/>
@@ -283,7 +283,7 @@ per No Faktur]]></text>
 				<textElement textAlignment="Right" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RRFNPJ_HNA}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rrfnPjHna}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="50" y="0" width="75" height="20" uuid="f7e2a662-2503-4f99-847e-e0b1f2081cf1"/>
@@ -297,7 +297,7 @@ per No Faktur]]></text>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RRFNPJ_FMNO}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rrfnPjFmNo}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy">
 				<reportElement stretchType="ContainerHeight" x="2" y="0" width="48" height="20" uuid="a80f7808-cac7-4de3-9f1f-62152d276fa0"/>
@@ -311,7 +311,7 @@ per No Faktur]]></text>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RRFNPJ_DATE}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rrfnPjDate}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="125" y="0" width="251" height="20" uuid="5a51fc36-5477-4c95-9a98-f209c6fc3705"/>
@@ -324,7 +324,7 @@ per No Faktur]]></text>
 				<textElement verticalAlignment="Middle">
 					<font size="8"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{RRFNPJ_CUSNAME}]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{rrfnPjCusName}]]></textFieldExpression>
 			</textField>
 			<rectangle>
 				<reportElement x="376" y="0" width="100" height="20" uuid="f0cd2c64-05d8-4633-a536-bf7527fcfe99"/>

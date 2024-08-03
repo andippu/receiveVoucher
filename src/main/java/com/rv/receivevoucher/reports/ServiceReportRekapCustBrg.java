@@ -38,7 +38,7 @@ public class ServiceReportRekapCustBrg {
 		  JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
 		  JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(RRCB);
 		  Map<String, Object> parameters = new HashMap<>();
-		  parameters.put("Period", period);
+		  parameters.put("period", period);
 		  parameters.put("custcode", cuscode);
 		  JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
 		  //Export report

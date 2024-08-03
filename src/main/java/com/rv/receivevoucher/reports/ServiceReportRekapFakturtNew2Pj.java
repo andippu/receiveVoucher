@@ -13,9 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
-import com.rv.receivevoucher.models.ReportRekapFakturNew2;
 import com.rv.receivevoucher.models.ReportRekapFakturtNew2Ba;
-import com.rv.receivevoucher.repository.IReportRekapFakturtNew2Ba;
+import com.rv.receivevoucher.models.ReportRekapFakturtNew2Pj;
+import com.rv.receivevoucher.repository.IReportRekapFakturtNew2Pj;
 
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
@@ -26,19 +26,19 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 @Service
-public class ServiceReportRekapFakturtNew2Ba {
+public class ServiceReportRekapFakturtNew2Pj {
 	@Autowired
-	IReportRekapFakturtNew2Ba repoRRFNBA;
+	IReportRekapFakturtNew2Pj repoRRFNPJ;
 	
 	public void ReportRekapFaktNew2(String period,  HttpServletResponse response) throws JRException, IOException {
 
-		List<ReportRekapFakturtNew2Ba> RRFNBA= repoRRFNBA.findByRrfnbaPeriod(period);
+		List<ReportRekapFakturtNew2Pj> RRFNPJ= repoRRFNPJ.findByRrfnPjPeriod(period);
 
-		File file = ResourceUtils.getFile("classpath:Rekap_Fakturt_New2_Ba.jrxml");
+		File file = ResourceUtils.getFile("classpath:Rekap_Fakturt_New2_Pj.jrxml");
 
 		JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
 	
-		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(RRFNBA);
+		JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(RRFNPJ);
 
 		Map<String, Object> parameters = new HashMap<>();
 
@@ -48,4 +48,6 @@ public class ServiceReportRekapFakturtNew2Ba {
 
 		JasperExportManager.exportReportToPdfStream(jasperPrint,response.getOutputStream());
 	}
+	
+
 }

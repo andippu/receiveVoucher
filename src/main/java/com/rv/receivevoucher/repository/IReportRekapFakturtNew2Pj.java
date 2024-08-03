@@ -7,10 +7,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import com.rv.receivevoucher.models.ReportRekapFakturtNew2Ba;
+import com.rv.receivevoucher.models.ReportRekapFakturtNew2Pj;
+
+
 
 @Repository
-public interface IReportRekapFakturtNew2Ba  extends JpaRepository<ReportRekapFakturtNew2Ba, String>{
-	
-	public List<ReportRekapFakturtNew2Ba> findByRrfnbaPeriod (String period);
-
+public interface IReportRekapFakturtNew2Pj extends JpaRepository<ReportRekapFakturtNew2Pj, String> {
+	public List<ReportRekapFakturtNew2Pj> findByRrfnPjPeriod (String period);
 }

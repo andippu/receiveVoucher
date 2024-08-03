@@ -12,6 +12,7 @@ import com.rv.receivevoucher.reports.ServiceReportRekapCustBrg;
 import com.rv.receivevoucher.reports.ServiceReportRekapCustFaktNew3;
 import com.rv.receivevoucher.reports.ServiceReportRekapFakturNew2;
 import com.rv.receivevoucher.reports.ServiceReportRekapFakturtNew2Ba;
+import com.rv.receivevoucher.reports.ServiceReportRekapFakturtNew2Pj;
 import com.rv.receivevoucher.reports.ServiceReportRekapFakturtNew5;
 import com.rv.receivevoucher.reports.ServiceRptFakturCash;
 import com.rv.receivevoucher.repository.IReportRekapFakturtNew5;
@@ -45,6 +46,8 @@ class ControllerReports {
 	private ServiceReportRekapCustBrg servRRCB;
 	@Autowired
 	private ServiceReportRekapFakturtNew2Ba servRRFNBA;
+	@Autowired
+	ServiceReportRekapFakturtNew2Pj servRRFNPJ;
 	
 	
 	 @GetMapping("/pdf/reportrekapcustfaktnew3")
@@ -128,6 +131,18 @@ class ControllerReports {
 	       String headerValue = "attachment; filename=Rekapitulasi By No Faktur Biaya Analisa " + currentDateTime + ".pdf";
 	       response.setHeader(headerKey, headerValue);
 	       servRRFNBA.ReportRekapFaktNew2(period, response);
+	     //  return "Report Has bee Download";
+	 }
+	 
+	 @GetMapping("/pdf/reportrekapfaktnewpj")
+	 public void RRFNPJcreatePDF(String period, HttpServletResponse response) throws IOException, JRException {
+	       response.setContentType("application/pdf");
+	       DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd:hh:mm:ss");
+	       String currentDateTime = dateFormatter.format(new Date());
+	       String headerKey = "Content-Disposition";
+	       String headerValue = "attachment; filename=Rekapitulasi By Customer Penjualan Lain2 " + currentDateTime + ".pdf";
+	       response.setHeader(headerKey, headerValue);
+	       servRRFNPJ.ReportRekapFaktNew2(period, response);
 	     //  return "Report Has bee Download";
 	 }
 
