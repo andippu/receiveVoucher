@@ -3,6 +3,7 @@ package com.rv.receivevoucher.models;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.IdClass;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,7 +18,8 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "REPORT_FAKTUR_CASH")
+@Table(name = "REP_FAKTUR_CASH")
+@IdClass(ReportFakturCashCompKey.class)
 public class ReportFakturCash {
 	
 	 @Id
@@ -101,8 +103,11 @@ public class ReportFakturCash {
 
 	 @Column(name=" RFCS_BRGTOTAL")
 	 private BigDecimal rfcsBrgTotal;
-
-
-	  
-
+	 
+	 @Column(name="RFCS_MSO_NO",length=30)
+	 private String rfcsMsoNo;
+	 
+	 @Column(name="RFCS_SATUAN",length=10)
+	 private String rfcsSatuan;
+	 
 }

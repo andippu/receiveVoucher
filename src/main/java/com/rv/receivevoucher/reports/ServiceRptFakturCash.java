@@ -31,16 +31,18 @@ public class ServiceRptFakturCash {
 	@Autowired
 	IReportFakturCashRepository repoRFc;
 	
-	public void exportJasperReport(String pdate, String ttd,HttpServletResponse response) throws JRException, IOException {
+	public void exportJasperReport(String pdate, String pcusno, String pfm_awl, String pfm_akh, String pstatus, String ttd,HttpServletResponse response) throws JRException, IOException {
 		   System.out.println("5555");
-        List<ReportFakturCash> address = repoRFc.findByRfcsDate(pdate);
+		   String temp = repoRFc.getFakturCash(pdate, pcusno, pfm_awl, pfm_akh, pstatus);
+			
+        List<ReportFakturCash> fkt = repoRFc.findAll();
         //Get file and compile it
         System.out.println("666");
         File file = ResourceUtils.getFile("classpath:test213.jrxml");
         System.out.println("7777");
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
         System.out.println("88888");
-        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(address);
+        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(fkt);
         System.out.println("9999");
         Map<String, Object> parameters = new HashMap<>();
         System.out.println("aaaa");

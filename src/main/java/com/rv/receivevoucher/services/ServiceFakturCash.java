@@ -14,8 +14,9 @@ public class ServiceFakturCash {
 	@Autowired
 	IReportFakturCashRepository repoRFc;
 	
-	public List<ReportFakturCash> getFakturCashList(String pdate, String ttd){
-		return repoRFc.findByRfcsDate(pdate);
+	public List<ReportFakturCash> getFakturCashList(String pdate, String pcusno, String pfm_awl, String pfm_akh, String pstatus, String ttd){
+		String temp = repoRFc.getFakturCash(pdate, pcusno, pfm_awl, pfm_akh, pstatus);
+		return repoRFc.findAll();
 	}
 
 }
