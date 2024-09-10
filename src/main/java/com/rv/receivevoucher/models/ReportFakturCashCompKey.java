@@ -12,7 +12,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class ReportFakturCashCompKey {
+public class ReportFakturCashCompKey implements Serializable{
 	 private String rfcsFmNo;
 	 private String rfcsBarang;
 	 private BigDecimal rfcsBrgQty;

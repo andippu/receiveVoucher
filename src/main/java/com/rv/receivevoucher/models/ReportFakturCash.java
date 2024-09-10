@@ -18,13 +18,20 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "REP_FAKTUR_CASH")
+@Table(name = "REP_FAKTUR_MASTER")
 @IdClass(ReportFakturCashCompKey.class)
 public class ReportFakturCash {
 	
 	 @Id
 	 @Column(name="RFCS_FMNO",length=40,  nullable = false)
 	 private String rfcsFmNo;
+	 @Id
+	 @Column(name="RFCS_BARANG",length=100)
+	 private String rfcsBarang;
+	 
+	 @Id
+	 @Column(name="RFCS_BRGQTY")
+	 private BigDecimal rfcsBrgQty;
 	 
 	 @Column(name="RFCS_CUSNAME")
 	 private String rfcsCustName;
@@ -89,18 +96,12 @@ public class ReportFakturCash {
 	 @Column(name="RFCS_HNA2")
 	 private BigDecimal rfcsHna2;
 	 
-	 @Column(name="RFCS_BARANG",length=100)
-	 private String rfcsBarang;
-
 	 @Column(name="RFCS_BRGHARGA")
 	 private BigDecimal rfcsBrgHrg;
 
 	 @Column(name="RFCS_BRGPOT")
 	 private BigDecimal rfcsBrgPotongan;
 	 
-	 @Column(name="RFCS_BRGQTY")
-	 private BigDecimal rfcsBrgQty;
-
 	 @Column(name=" RFCS_BRGTOTAL")
 	 private BigDecimal rfcsBrgTotal;
 	 
@@ -109,5 +110,8 @@ public class ReportFakturCash {
 	 
 	 @Column(name="RFCS_SATUAN",length=10)
 	 private String rfcsSatuan;
+	 
+	 @Column(name="RFCS_BRCODE",length=10)
+	 private String rfcsBrCode;
 	 
 }
