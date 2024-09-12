@@ -35,24 +35,114 @@
 	<field name="rfcsTotSel" class="java.math.BigDecimal"/>
 	<field name="rfcsPph22" class="java.math.BigDecimal"/>
 	<field name="rfcsPpn" class="java.math.BigDecimal"/>
-	<field name="rfcsBarang" class="java.lang.String"/>
-	<field name="rfcsBrgHrg" class="java.math.BigDecimal"/>
-	<field name="rfcsBrgPotongan" class="java.math.BigDecimal"/>
-	<field name="rfcsBrgQty" class="java.math.BigDecimal"/>
-	<field name="rfcsBrgTotal" class="java.math.BigDecimal"/>
-	<field name="rfcsMsoNo" class="java.lang.String"/>
-	<field name="rfcsBrCode" class="java.lang.String"/>
-	<field name="rfcsSatuan" class="java.lang.String"/>
-	<variable name="rowcount" class="java.lang.Integer" resetType="Group" resetGroup="GroupFMONO">
+	<field name="rfcsmSONo" class="java.lang.String"/>
+	<variable name="rowcount" class="java.lang.Integer" resetType="Page">
 		<variableExpression><![CDATA[$V{rowcount} + 1]]></variableExpression>
 		<initialValueExpression><![CDATA[0]]></initialValueExpression>
 	</variable>
 	<group name="GroupFMONO" isStartNewPage="true" isResetPageNumber="true" isReprintHeaderOnEachPage="true">
 		<groupExpression><![CDATA[$F{rfcsFmNo}]]></groupExpression>
 		<groupHeader>
-			<band height="145">
+			<band height="428">
+				<subreport overflowType="NoStretch">
+					<reportElement x="0" y="127" width="553" height="223" uuid="864d9b22-bc15-4f32-b07c-f90563e5fc3d"/>
+					<subreportParameter name="PFMNO">
+						<subreportParameterExpression><![CDATA[$F{rfcsFmNo}]]></subreportParameterExpression>
+					</subreportParameter>
+					<connectionExpression><![CDATA[java.sql.DriverManager.getConnection("jdbc:oracle:thin:@localhost:1522:orcl", "receivevoucher", "lp999")]]></connectionExpression>
+					<subreportExpression><![CDATA["LAP_DETAIL_FAKTUR.jasper"]]></subreportExpression>
+				</subreport>
+				<textField pattern="#,##0.00">
+					<reportElement x="1" y="351" width="70" height="15" uuid="539fe279-1f5f-495b-92e6-5a110826efaf"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{rfcsNilaiHna}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00">
+					<reportElement x="102" y="351" width="50" height="15" uuid="cfa2b9ac-6cce-4767-acb9-9f5c3cc546bf">
+						<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{rfcsPotongan}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00">
+					<reportElement x="162" y="351" width="50" height="15" uuid="23806dbf-0eb9-4017-bed9-4e0b19b882c3">
+						<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{rfcsHna2}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00">
+					<reportElement x="231" y="351" width="61" height="15" uuid="58852aa8-6d71-4051-974d-45f42fb77e58">
+						<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{rfcsPpn}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00">
+					<reportElement x="311" y="351" width="60" height="15" uuid="68a5c6f9-1aa0-4f88-8c1f-4cb65dabd149">
+						<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{rfcsPph22}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00">
+					<reportElement x="377" y="351" width="59" height="15" uuid="233d71d4-102d-4de5-a32f-09315d44fa1a">
+						<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{rfcsMaterai}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00">
+					<reportElement x="454" y="351" width="100" height="15" uuid="620a23ae-beaa-4cb9-bc36-d3e60acf60f5">
+						<property name="com.jaspersoft.studio.unit.height" value="inch"/>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{rfcsTotalValue}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Group" evaluationGroup="GroupFMONO">
+					<reportElement x="251" y="411" width="100" height="15" isPrintWhenDetailOverflows="true" printWhenGroupChanges="GroupFMONO" uuid="016aa067-5b83-47e9-9bbe-db467d94bf1f"/>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="438" y="372" width="32" height="15" uuid="0482a204-ab01-44fc-8ddb-dc4e163005db"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<text><![CDATA[Jakarta, ]]></text>
+				</staticText>
+				<textField pattern="dd-mm-yyyy">
+					<reportElement x="470" y="372" width="68" height="15" uuid="ee07b894-67e0-46e8-9bd7-6ee4027a0f6a"/>
+					<textElement verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
 				<textField>
-					<reportElement x="145" y="37" width="146" height="15" uuid="465a63fa-8502-4d43-8382-97453ff447d6">
+					<reportElement x="429" y="411" width="100" height="15" uuid="9c6f25b1-003a-40a9-b8a7-ea4b591b87aa"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$P{ttd}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="137" y="42" width="146" height="15" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="e02f39dc-a2d4-4c42-9f69-0a5a0c25bb75">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -61,7 +151,7 @@
 					<textFieldExpression><![CDATA[$F{rfcsFmNo}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="360" y="20" width="195" height="30" uuid="9c0ecabb-977f-4c03-ac2a-9202140bf0d7">
+					<reportElement x="354" y="25" width="195" height="30" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="11018600-54ea-47ca-a451-a3a5f6ebbe23">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement verticalAlignment="Middle">
@@ -70,7 +160,7 @@
 					<textFieldExpression><![CDATA[$F{rfcsAddr1}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="360" y="52" width="195" height="15" uuid="aa708d96-ef92-44b4-8e48-d0a4f64b4f07">
+					<reportElement x="354" y="57" width="195" height="15" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="ed57e9d1-1098-438a-a573-dea4401d1871">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement verticalAlignment="Middle">
@@ -79,7 +169,7 @@
 					<textFieldExpression><![CDATA[$F{rfcsAddr2}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="360" y="68" width="195" height="15" uuid="cae7da95-9a09-4dfb-a742-2e7c00b401d1">
+					<reportElement x="354" y="73" width="195" height="15" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="ce6e8803-d624-45f1-bbe4-9ed0c49bea35">
 						<property name="com.jaspersoft.studio.unit.y" value="px"/>
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
@@ -89,7 +179,7 @@
 					<textFieldExpression><![CDATA[$F{rfcsKota}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="135" y="110" width="100" height="15" uuid="276c47ce-5762-4feb-a9c6-c1a9b0435b3b">
+					<reportElement x="130" y="104" width="100" height="15" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="1d5bee8d-1453-4afb-99e9-a3c5922b25b2">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement verticalAlignment="Middle">
@@ -98,7 +188,7 @@
 					<textFieldExpression><![CDATA[$F{rfcsDate}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="285" y="110" width="100" height="15" uuid="6c05447a-f7da-48c9-8459-75394f9c2940">
+					<reportElement x="279" y="104" width="100" height="15" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="99d64484-41d0-4287-88ae-64c6f409cc77">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement verticalAlignment="Middle">
@@ -107,7 +197,7 @@
 					<textFieldExpression><![CDATA[$F{rfcsCustCode}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="435" y="110" width="100" height="15" uuid="8e01a8ff-de87-4516-a866-a46d4a6809e5">
+					<reportElement x="429" y="104" width="100" height="15" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="ca4bd71e-a64f-4668-8e4f-15a4d42e9d5b">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement verticalAlignment="Middle">
@@ -116,7 +206,7 @@
 					<textFieldExpression><![CDATA[$F{rfcsJtempo}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="360" y="5" width="195" height="15" uuid="4e8c202d-1af2-4ee7-8c70-5f9f333226fd">
+					<reportElement x="354" y="10" width="195" height="15" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="013a01e6-a115-4076-94e3-82b956ba85e2">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement verticalAlignment="Middle">
@@ -125,188 +215,28 @@
 					<textFieldExpression><![CDATA[$F{rfcsCustName}]]></textFieldExpression>
 				</textField>
 				<textField>
-					<reportElement x="19" y="110" width="100" height="15" uuid="f1e8c068-70c9-41f6-85b9-931ba6d3fb7e">
+					<reportElement x="10" y="104" width="100" height="15" isRemoveLineWhenBlank="true" isPrintInFirstWholeBand="true" isPrintWhenDetailOverflows="true" uuid="a567f752-8ef3-4596-926d-650cd37a7441">
 						<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					</reportElement>
 					<textElement verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA[$F{rfcsMsoNo}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{rfcsmSONo}]]></textFieldExpression>
 				</textField>
-				<textField>
-					<reportElement isPrintRepeatedValues="false" x="482" y="130" width="45" height="15" printWhenGroupChanges="GroupFMONO" uuid="88b419b0-d4ff-4c50-9232-be9e4a449c17">
-						<property name="com.jaspersoft.studio.unit.height" value="inch"/>
-					</reportElement>
+				<textField evaluationTime="Page">
+					<reportElement x="150" y="410" width="100" height="16" isPrintWhenDetailOverflows="true" uuid="80003b1d-9995-41ec-a548-263eacabc6d4"/>
 					<textElement textAlignment="Right" verticalAlignment="Middle">
 						<font size="8"/>
 					</textElement>
-					<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
-				</textField>
-				<textField evaluationTime="Group" evaluationGroup="GroupFMONO">
-					<reportElement isPrintRepeatedValues="false" x="528" y="130" width="27" height="15" printWhenGroupChanges="GroupFMONO" uuid="9678e83f-48c0-4237-a533-c069fce34a55"/>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
 				</textField>
 			</band>
 		</groupHeader>
-		<groupFooter>
-			<band height="227">
-				<textField pattern="#,##0.00">
-					<reportElement x="0" y="128" width="70" height="15" uuid="bdbe671e-ac6f-4d59-9806-9bdef99dc7a2"/>
-					<textElement verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{rfcsNilaiHna}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00">
-					<reportElement x="90" y="128" width="60" height="15" uuid="8a1e6276-b538-4ee4-a658-ecc98f84f9a2">
-						<property name="com.jaspersoft.studio.unit.height" value="inch"/>
-					</reportElement>
-					<textElement verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{rfcsPotongan}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00">
-					<reportElement x="160" y="128" width="60" height="15" uuid="e61199f5-02b8-4a61-944c-acacf3d3348c">
-						<property name="com.jaspersoft.studio.unit.height" value="inch"/>
-					</reportElement>
-					<textElement verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{rfcsHna2}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00">
-					<reportElement x="230" y="128" width="61" height="15" uuid="44df09f8-b4a1-4347-87a2-e9efeaeae1e6">
-						<property name="com.jaspersoft.studio.unit.height" value="inch"/>
-					</reportElement>
-					<textElement verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{rfcsPpn}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00">
-					<reportElement x="310" y="128" width="60" height="15" uuid="b029f5b7-bbae-4450-93cc-132e60125d0d">
-						<property name="com.jaspersoft.studio.unit.height" value="inch"/>
-					</reportElement>
-					<textElement verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{rfcsPph22}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00">
-					<reportElement x="376" y="128" width="59" height="15" uuid="b996659f-56b4-4244-9685-6adc33d1f3b5">
-						<property name="com.jaspersoft.studio.unit.height" value="inch"/>
-					</reportElement>
-					<textElement verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{rfcsMaterai}]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement x="428" y="173" width="32" height="15" uuid="fb4adfc9-0ed3-4d82-9e8b-558b4c1a2813"/>
-					<textElement verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<text><![CDATA[Jakarta, ]]></text>
-				</staticText>
-				<textField pattern="dd-mm-yyyy">
-					<reportElement x="460" y="173" width="68" height="15" uuid="e0ff5f56-03a8-459a-8bab-601cf11f4601"/>
-					<textElement verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="428" y="212" width="100" height="15" uuid="28bdf616-939d-4cd3-a219-5b793be1ca18"/>
-					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$P{ttd}]]></textFieldExpression>
-				</textField>
-				<textField pattern="#,##0.00">
-					<reportElement x="450" y="128" width="100" height="15" uuid="bb3dc015-7ea5-4037-a0c1-5c7df2c9f8af"/>
-					<textElement verticalAlignment="Middle">
-						<font size="8"/>
-					</textElement>
-					<textFieldExpression><![CDATA[$F{rfcsTotSel}]]></textFieldExpression>
-				</textField>
-			</band>
-		</groupFooter>
 	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
-	<detail>
-		<band height="17" splitType="Stretch">
-			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
-			<textField>
-				<reportElement x="40" y="0" width="40" height="15" uuid="d6239414-01f2-45e7-9d96-0db12b3ff1b9">
-					<property name="com.jaspersoft.studio.unit.height" value="inch"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{rfcsBrCode}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="80" y="0" width="80" height="15" uuid="8194084d-36db-4dbf-ac76-43b8f8facf6f"/>
-				<textElement verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{rfcsBarang}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement x="160" y="0" width="79" height="15" uuid="c776fdf6-50a9-46c5-99ee-94fe8299dbd1"/>
-				<textElement verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{rfcsBrgQty}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement x="239" y="0" width="79" height="15" uuid="1df8b1d4-6097-4139-b13d-b9279ace8d35"/>
-				<textElement verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{rfcsSatuan}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement x="318" y="0" width="79" height="15" uuid="4a8ca291-50cf-45eb-8057-7efe97f0a5a1"/>
-				<textElement verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{rfcsBrgHrg}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement x="397" y="0" width="79" height="15" uuid="0b1ee73a-f192-45fd-be4b-e5c9a4432b91">
-					<property name="com.jaspersoft.studio.unit.height" value="inch"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{rfcsBrgPotongan}]]></textFieldExpression>
-			</textField>
-			<textField pattern="#,##0.00">
-				<reportElement x="476" y="0" width="79" height="15" uuid="4c7fc30c-252c-4f61-9a94-bfe412662cb8"/>
-				<textElement verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$F{rfcsBrgTotal}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="0" y="0" width="30" height="17" uuid="7bc9bf95-b55f-4764-b44a-ddb83a198c2d"/>
-				<textElement verticalAlignment="Middle">
-					<font size="8"/>
-				</textElement>
-				<textFieldExpression><![CDATA[$V{rowcount}]]></textFieldExpression>
-			</textField>
-			<break>
-				<reportElement x="0" y="16" width="100" height="1" uuid="1e42530a-a6f2-45b2-8ff6-60fc09a1ecf0">
-					<printWhenExpression><![CDATA[$V{rowcount}%10==0]]></printWhenExpression>
-				</reportElement>
-			</break>
-		</band>
-	</detail>
+	<columnHeader>
+		<band/>
+	</columnHeader>
 </jasperReport>
