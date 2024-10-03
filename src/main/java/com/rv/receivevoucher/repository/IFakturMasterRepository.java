@@ -28,7 +28,10 @@ public interface IFakturMasterRepository extends JpaRepository<FakturMaster,Stri
 	@Procedure(procedureName = "P_CHECK_LUNAS_MASTER")
 	public String pelunasanFakturMaster(String p_fmno, String p_type);
 	
+	//closing monthly
 	
+	@Procedure(procedureName = "GET_EXCEL_LAP_PIUTANG")
+	String runLapPiutangExcel(String bulan);
 	
 
 }

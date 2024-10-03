@@ -33,5 +33,10 @@ public class ServiceFakturMaster {
     public String lunasFaktur(String p_fmno, String p_type) {
     	return repoFM.pelunasanFakturMaster(p_fmno, p_type);
     }
+    
+    //closing monthly
+    public String RunLapPiutangExcel (String bulan) {
+    	return repoFM.runLapPiutangExcel(bulan);
+    }
 
 }

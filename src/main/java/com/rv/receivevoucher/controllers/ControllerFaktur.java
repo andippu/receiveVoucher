@@ -3,10 +3,19 @@ package com.rv.receivevoucher.controllers;
 import com.rv.receivevoucher.models.FakturMaster;
 import com.rv.receivevoucher.services.ServiceFakturMaster;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.UrlResource;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @RestController
@@ -14,6 +23,7 @@ import java.util.List;
 public class ControllerFaktur {
     @Autowired
     ServiceFakturMaster servFM;
+    private final Path fileStorageLocation = Paths.get("D:\\UPLOADFILES");
 
     @GetMapping("/fakmas/getFakturByNo")
     public List<FakturMaster> getFakturByNo(String fktNo) {
@@ -40,4 +50,30 @@ public class ControllerFaktur {
     public String lunasFaktur(String p_fmno, String p_type) {
     	return servFM.lunasFaktur(p_fmno, p_type);
     }
+    
+    //closing monthly
+    
+    @GetMapping("/closerv/runlappiutangexcel")
+	public ResponseEntity<Resource> RunLapPiutangExcel(@RequestParam  String akhir) {
+	    	String temp = servFM.RunLapPiutangExcel(akhir);
+	    	String filename="LAPORAN PIUTANG "+akhir.substring(3, 10)+".xml";
+	    	String fl=filename.replace("/","");
+	    	System.out.println("aaaaa : "+fl);
+	        try {		        	
+	            Path filePath = fileStorageLocation.resolve(fl).normalize();
+	            Resource resource = new UrlResource(filePath.toUri());
+	            if (resource.exists()) {
+	                String contentType = "application/octet-stream";
+	                return ResponseEntity.ok()
+	                        .contentType(org.springframework.http.MediaType.parseMediaType(contentType))
+	                        .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
+	                        .body(resource);
+	            } else {
+	                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+	            }
+	        } catch (IOException ex) {
+	            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(null);
+	        }
+	}
+
 }
