@@ -33,5 +33,21 @@ public interface IFakturMasterRepository extends JpaRepository<FakturMaster,Stri
 	@Procedure(procedureName = "GET_EXCEL_LAP_PIUTANG")
 	String runLapPiutangExcel(String bulan);
 	
+	@Procedure(procedureName = "GET_EXCEL_UMUR_PIUTANG")
+	String runLapUmurPiutangExcel(String bulan);
+	
+	@Procedure(procedureName = "GET_EXCEL_SP_EXCEL")
+	String runSuratPiutangExcel(String bulan);
+	
+	@Procedure(procedureName = "GET_EXCEL_PROCEDURE_CLOSING")
+	String runClosingAR(String bulan);
+	
+	@Procedure(procedureName = "JURNAL_PNJLU")
+	String runJurnalPnjlu(String bulan);
+	
+	@Procedure(procedureName = "JURNAL_PDPT")
+	String runJurnalPdpt(String bulan);
+	
+	
 
 }
